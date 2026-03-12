@@ -1,5 +1,6 @@
 "use client";
 import { useState } from 'react';
+import Link from 'next/link';
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -11,6 +12,7 @@ export default function Navbar() {
     { name: 'About PCC', href: '/history' },
     { name: 'Activities & Events', href: '/events' },
     { name: 'News', href: '/news' },
+    { name: 'Contact', href: '/contact' }, // Added Contact Link
   ];
 
   const courseData = [
@@ -25,11 +27,21 @@ export default function Navbar() {
     <nav className="fixed top-0 w-full z-50 bg-white/90 backdrop-blur-md border-b border-slate-100 py-3 px-4">
       <div className="max-w-7xl mx-auto flex justify-between items-center font-sans">
         
-        <div className="font-black text-blue-700 text-2xl tracking-tighter mr-4">PCC</div>
+        {/* LOGO */}
+        <Link href="/" className="font-black text-blue-700 text-2xl tracking-tighter mr-4">
+          PCC
+        </Link>
 
+        {/* NAV LINKS */}
         <div className="hidden lg:flex items-center gap-5 text-[10px] font-black text-slate-500 uppercase tracking-widest">
           {navLinks.map((link) => (
-            <a key={link.name} href={link.href} className="hover:text-blue-600 transition-all">{link.name}</a>
+            <Link 
+              key={link.name} 
+              href={link.href} 
+              className="hover:text-blue-600 transition-all"
+            >
+              {link.name}
+            </Link>
           ))}
 
           {/* INTERACTIVE COURSES DROPDOWN */}
@@ -50,9 +62,12 @@ export default function Navbar() {
                   <ul className="space-y-1">
                     {item.links.map(course => (
                       <li key={course}>
-                        <a href="/departments" className="text-slate-600 hover:text-blue-500 normal-case font-bold text-sm block">
+                        <Link 
+                          href="/departments" 
+                          className="text-slate-600 hover:text-blue-500 normal-case font-bold text-sm block"
+                        >
                           {course}
-                        </a>
+                        </Link>
                       </li>
                     ))}
                   </ul>
@@ -62,9 +77,12 @@ export default function Navbar() {
           </div>
         </div>
 
-        <button className="bg-blue-600 text-white px-5 py-2 rounded-full text-[10px] font-black tracking-widest hover:shadow-lg transition-all">
-          ENROLL NOW
-        </button>
+        {/* ENROLL BUTTON */}
+        <Link href="/enrollment">
+          <button className="bg-blue-600 text-white px-5 py-2 rounded-full text-[10px] font-black tracking-widest hover:shadow-lg transition-all active:scale-95">
+            ENROLL NOW
+          </button>
+        </Link>
       </div>
     </nav>
   );
