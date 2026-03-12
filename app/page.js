@@ -1,158 +1,204 @@
+"use client";
 import Navbar from './Navbar';
 import departments from './data/departments.json';
-import newsData from './data/news.json'; // Importing the new data we created
+import newsData from './data/news.json';
 
 export default function Home() {
-  // Get the 3 most recent news items for the home feed
   const latestNews = newsData.slice(0, 3);
 
   return (
     <>
       <Navbar />
-      <main className="bg-white">
+      <main className="bg-white selection:bg-blue-600 selection:text-white">
         
-        {/* HERO SECTION - Refined for 2026 */}
-        <section className="relative min-h-[90vh] flex items-center justify-center bg-slate-900 overflow-hidden">
-          <div className="absolute inset-0 opacity-40">
+        {/* HERO SECTION - THE CINEMATIC EXPERIENCE */}
+        <section className="relative min-h-screen flex items-center justify-center bg-slate-900 overflow-hidden">
+          {/* Animated Background Overlay */}
+          <div className="absolute inset-0 z-0">
+            <div className="absolute inset-0 bg-gradient-to-b from-slate-900/40 via-slate-900/80 to-slate-900 z-10"></div>
             <img 
               src="/images/history3.png" 
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover scale-105 animate-[pulse_10s_ease-in-out_infinite]" 
               alt="Campus Background"
             />
           </div>
-          <div className="relative z-10 text-center px-6 max-w-5xl">
-            <span className="text-blue-400 font-black uppercase tracking-[0.4em] text-xs mb-4 block">
-              Welcome to the Home of Legends
-            </span>
-            <h1 className="text-6xl md:text-8xl font-black text-white mb-8 tracking-tighter uppercase">
-              Passi City <span className="text-blue-500">College</span>
+
+          <div className="relative z-20 text-center px-6 max-w-5xl">
+            <div className="inline-block mb-6 overflow-hidden">
+              <span className="text-blue-400 font-black uppercase tracking-[0.5em] text-[10px] block animate-[slideUp_1s_ease-out]">
+                Established 2003 • Passi City, Iloilo
+              </span>
+            </div>
+            
+            <h1 className="text-6xl md:text-9xl font-black text-white mb-8 tracking-tighter uppercase italic leading-[0.85]">
+              Home of <br/>
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-cyan-400 drop-shadow-2xl">
+                Legends
+              </span>
             </h1>
-            <p className="text-slate-300 max-w-2xl mx-auto text-lg md:text-xl leading-relaxed font-medium mb-10">
-              A center of academic excellence for sustainable development and societal transformation. 
-              Empowering the next generation of global leaders.
+
+            <p className="text-slate-300 max-w-2xl mx-auto text-lg md:text-xl leading-relaxed font-medium mb-12 opacity-0 animate-[fadeIn_1.5s_ease-out_0.5s_forwards]">
+              Transforming passion into profession. Join the region's fastest-growing academic community.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-blue-600 hover:bg-blue-700 text-white px-10 py-4 rounded-full font-black uppercase tracking-widest text-xs transition-all shadow-xl shadow-blue-500/20">
-                Explore Programs
+
+            <div className="flex flex-col sm:flex-row gap-6 justify-center opacity-0 animate-[fadeIn_1.5s_ease-out_1s_forwards]">
+              <button className="group relative bg-blue-600 text-white px-12 py-5 rounded-full font-black uppercase tracking-widest text-[10px] transition-all hover:scale-105 active:scale-95 shadow-2xl shadow-blue-500/40 overflow-hidden">
+                <span className="relative z-10">Explore Programs</span>
+                <div className="absolute inset-0 bg-white opacity-0 group-hover:opacity-20 transition-opacity"></div>
               </button>
-              <button className="bg-white/10 hover:bg-white/20 backdrop-blur-md text-white border border-white/20 px-10 py-4 rounded-full font-black uppercase tracking-widest text-xs transition-all">
+              <button className="bg-white/5 hover:bg-white/10 backdrop-blur-xl text-white border border-white/20 px-12 py-5 rounded-full font-black uppercase tracking-widest text-[10px] transition-all hover:border-white/40">
                 Student Portal
               </button>
             </div>
           </div>
-        </section>
 
-        {/* LEADERSHIP HIGHLIGHT - Dr. Palmares */}
-        <section className="py-24 px-6 bg-slate-50">
-          <div className="max-w-6xl mx-auto">
-            <div className="bg-white rounded-[3rem] p-12 border border-slate-100 shadow-xl flex flex-col md:flex-row items-center gap-12">
-              <div className="w-48 h-48 md:w-64 md:h-64 rounded-[2rem] bg-blue-100 flex-shrink-0 overflow-hidden">
-                <img src="/images/janice.jpg" alt="President" className="w-full h-full object-cover" />
-              </div>
-              <div>
-                <span className="text-blue-600 font-black text-xs uppercase tracking-widest">Office of the President</span>
-                <h2 className="text-4xl font-black text-slate-900 mt-2 mb-4">Leadership & Excellence</h2>
-                <p className="text-slate-600 leading-relaxed mb-6 italic">
-                  "Congratulations to Dr. Janice Jennifer P. Palmares on her election as President of ALCOR VI. 
-                  Under her leadership, Passi City College continues to strengthen community ties and regional academic standards."
-                </p>
-                <div className="flex items-center gap-4">
-                  <div className="h-[2px] w-12 bg-blue-600"></div>
-                  <span className="font-bold text-slate-900 uppercase text-sm tracking-widest">Dr. Janice Jennifer P. Palmares</span>
-                </div>
-              </div>
-            </div>
+          {/* Scroll Indicator */}
+          <div className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce opacity-50">
+            <div className="w-1 h-12 bg-gradient-to-b from-blue-500 to-transparent rounded-full"></div>
           </div>
         </section>
 
-        {/* DEPARTMENTS GRID */}
-        <section id="departments" className="max-w-7xl mx-auto py-24 px-6">
-          <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
-            <div>
-              <h2 className="text-5xl font-black text-slate-900 uppercase tracking-tighter">
-                Academic <span className="text-blue-600">Colleges.</span>
-              </h2>
-              <p className="text-slate-500 mt-4 text-lg">Specialized training for a rapidly changing world.</p>
-            </div>
-            <a href="/departments" className="text-blue-600 font-black uppercase tracking-widest text-xs border-b-2 border-blue-600 pb-1">View All Programs</a>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            {departments && departments.slice(0, 3).map((dept) => (
-              <div key={dept.id} className="group bg-white rounded-[2.5rem] overflow-hidden border border-slate-100 shadow-sm hover:shadow-2xl transition-all duration-500">
-                <div className="h-56 overflow-hidden">
-                  <img src={dept.image} alt={dept.name} className="w-full h-full object-cover group-hover:scale-110 transition duration-700" />
-                </div>
-                <div className="p-10">
-                  <span className="text-blue-600 font-black text-[10px] uppercase tracking-[0.2em]">{dept.short}</span>
-                  <h3 className="text-xl font-black text-slate-900 mt-2 mb-4">{dept.name}</h3>
-                  <button className="text-slate-400 font-black uppercase tracking-widest text-[10px] group-hover:text-blue-600 transition-colors">Learn More +</button>
-                </div>
+        {/* STATS STRIP - IMPACT IN NUMBERS */}
+        <section className="relative z-30 -mt-12 max-w-6xl mx-auto px-6">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            {[
+              { label: 'Students', val: '4,000+' },
+              { label: 'Pass Rate', val: '92%' },
+              { label: 'Faculty', val: '150+' },
+              { label: 'Awards', val: '45' }
+            ].map((stat, i) => (
+              <div key={i} className="bg-white p-8 rounded-[2rem] shadow-2xl shadow-slate-200/50 text-center border border-slate-50 transition-transform hover:-translate-y-2">
+                <p className="text-3xl font-black text-slate-900 tracking-tighter">{stat.val}</p>
+                <p className="text-[10px] font-black text-blue-600 uppercase tracking-widest mt-1">{stat.label}</p>
               </div>
             ))}
           </div>
         </section>
 
-        {/* LATEST NEWS FEED - DYNAMIC */}
-        <section className="bg-slate-900 py-24 px-6 text-white">
+        {/* LEADERSHIP SECTION - REFINED */}
+        <section className="py-32 px-6">
+          <div className="max-w-6xl mx-auto">
+            <div className="group relative bg-slate-50 rounded-[4rem] p-8 md:p-20 overflow-hidden">
+                <div className="absolute top-0 right-0 w-1/2 h-full bg-blue-600/5 -skew-x-12 translate-x-20"></div>
+                <div className="relative z-10 flex flex-col md:flex-row items-center gap-16">
+                    <div className="relative">
+                        <div className="absolute inset-0 bg-blue-600 rounded-[3rem] rotate-6 group-hover:rotate-12 transition-transform duration-500"></div>
+                        <img 
+                            src="/images/janice.jpg" 
+                            alt="President" 
+                            className="relative w-64 h-80 object-cover rounded-[3rem] shadow-2xl" 
+                        />
+                    </div>
+                    <div className="flex-1">
+                        <span className="inline-block bg-blue-100 text-blue-700 px-4 py-1 rounded-full text-[10px] font-black uppercase tracking-widest mb-6">
+                            Presidential Message
+                        </span>
+                        <h2 className="text-4xl md:text-5xl font-black text-slate-900 mb-6 tracking-tighter uppercase italic leading-tight">
+                            "A Legacy of <span className="text-blue-600">Innovation</span> and Service."
+                        </h2>
+                        <p className="text-slate-600 text-lg leading-relaxed mb-8 font-medium">
+                            Under the visionary leadership of Dr. Janice Jennifer P. Palmares, PCC stands as a beacon of hope and excellence in Western Visayas.
+                        </p>
+                        <div className="flex items-center gap-4">
+                            <div className="w-12 h-12 rounded-full bg-slate-900 flex items-center justify-center text-white font-bold text-xs italic">JP</div>
+                            <div>
+                                <p className="font-black text-slate-900 uppercase text-sm tracking-tighter leading-none">Dr. Janice Jennifer P. Palmares</p>
+                                <p className="text-blue-600 font-bold text-[10px] uppercase tracking-widest mt-1">College President</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+          </div>
+        </section>
+
+        {/* DEPARTMENTS - INTERACTIVE CARROUSEL STYLE */}
+        <section id="departments" className="py-24 px-6 bg-white">
           <div className="max-w-7xl mx-auto">
-            <div className="flex justify-between items-center mb-16">
-              <h2 className="text-4xl font-black tracking-tighter uppercase">The <span className="text-blue-500">Gazette</span> Feed</h2>
-              <a href="/news" className="bg-white/10 hover:bg-white text-white hover:text-slate-900 px-6 py-3 rounded-full text-[10px] font-black uppercase tracking-widest transition-all">All News</a>
+            <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+              <h2 className="text-5xl md:text-7xl font-black text-slate-900 uppercase tracking-tighter italic">
+                Our <span className="text-blue-600">Academies.</span>
+              </h2>
+              <a href="/departments" className="group flex items-center gap-3 font-black uppercase tracking-widest text-[10px] text-blue-600">
+                Explore All <span className="w-8 h-8 rounded-full border-2 border-blue-600 flex items-center justify-center group-hover:bg-blue-600 group-hover:text-white transition-all">→</span>
+              </a>
             </div>
 
-            <div className="grid md:grid-cols-3 gap-10">
-              {latestNews.map((item) => (
-                <div key={item.id} className="group cursor-pointer">
-                  <div className="aspect-video rounded-3xl overflow-hidden mb-6">
-                    <img src={item.image} className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" />
+            <div className="grid md:grid-cols-3 gap-6">
+              {departments && departments.slice(0, 3).map((dept, i) => (
+                <div key={dept.id} className="group relative h-[500px] rounded-[3rem] overflow-hidden bg-slate-900 shadow-2xl transition-all duration-700 hover:scale-[0.98]">
+                  <img src={dept.image} className="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:opacity-100 group-hover:scale-110 transition duration-700" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/20 to-transparent"></div>
+                  <div className="absolute bottom-0 left-0 p-10 w-full">
+                    <span className="text-blue-400 font-black text-[10px] uppercase tracking-[0.3em] mb-2 block">{dept.short}</span>
+                    <h3 className="text-2xl font-black text-white uppercase tracking-tighter leading-tight mb-6">{dept.name}</h3>
+                    <button className="bg-white/10 backdrop-blur-md border border-white/20 text-white w-full py-4 rounded-2xl font-black uppercase tracking-widest text-[10px] opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500">
+                      View Department
+                    </button>
                   </div>
-                  <span className="text-blue-500 font-black text-[10px] uppercase tracking-widest">{item.category}</span>
-                  <h4 className="text-xl font-bold mt-2 leading-tight group-hover:text-blue-400 transition-colors">{item.title}</h4>
-                  <p className="text-slate-400 text-sm mt-4 line-clamp-2">{item.excerpt}</p>
                 </div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* FOOTER */}
-        <footer className="bg-white pt-24 pb-12 px-6 border-t border-slate-100">
-          <div className="max-w-7xl mx-auto grid md:grid-cols-4 gap-12 mb-20">
-            <div className="col-span-2">
-              <h3 className="text-2xl font-black mb-6 uppercase tracking-tighter">Passi City <span className="text-blue-600">College.</span></h3>
-              <p className="text-slate-500 max-w-sm leading-relaxed mb-8">
-                Official institution of higher learning in the City of Passi, Iloilo. Dedicated to producing globally competent graduates.
-              </p>
-              <div className="flex gap-4">
-                <div className="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center hover:bg-blue-600 hover:text-white transition-colors cursor-pointer">FB</div>
-                <div className="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center hover:bg-blue-400 hover:text-white transition-colors cursor-pointer">TW</div>
-              </div>
-            </div>
-            <div>
-              <h4 className="font-black uppercase tracking-widest text-xs mb-6 text-slate-400">Campus</h4>
-              <ul className="space-y-4 text-sm font-bold text-slate-600">
-                <li className="hover:text-blue-600 cursor-pointer transition-colors">Academic Calendar</li>
-                <li className="hover:text-blue-600 cursor-pointer transition-colors">College Week 2026</li>
-                <li className="hover:text-blue-600 cursor-pointer transition-colors">Scholarship Hub</li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="font-black uppercase tracking-widest text-xs mb-6 text-slate-400">Reach Us</h4>
-              <p className="text-sm text-slate-500 leading-loose">
-                F. Palmares Sr. St., Passi City, Iloilo<br/>
-                (033) 311 5000<br/>
-                info@passicitycollege.edu.ph
-              </p>
+        {/* NEWS GAZETTE - DARK MODE INTERACTIVE */}
+        <section className="bg-slate-900 py-32 px-6 rounded-t-[5rem] -mt-10 relative z-40">
+          <div className="max-w-7xl mx-auto">
+            <h2 className="text-4xl md:text-6xl font-black text-white tracking-tighter uppercase italic mb-16">
+                The <span className="text-blue-500 underline decoration-8 underline-offset-8">Gazette</span>
+            </h2>
+
+            <div className="grid lg:grid-cols-3 gap-12">
+              {latestNews.map((item, idx) => (
+                <div key={item.id} className="group cursor-pointer">
+                    <div className="relative aspect-[4/5] rounded-[3rem] overflow-hidden mb-8">
+                        <img 
+                            src={item.image} 
+                            className="w-full h-full object-cover grayscale transition-all duration-700 group-hover:grayscale-0 group-hover:scale-110" 
+                        />
+                        <div className="absolute top-6 left-6 bg-blue-600 text-white px-4 py-1 rounded-full text-[10px] font-black uppercase tracking-widest">
+                            {item.category}
+                        </div>
+                    </div>
+                    <p className="text-blue-500 font-black text-[10px] uppercase tracking-widest mb-2 italic">0{idx + 1} — News Item</p>
+                    <h4 className="text-2xl font-black text-white leading-tight group-hover:text-blue-400 transition-colors uppercase tracking-tighter">
+                        {item.title}
+                    </h4>
+                    <div className="w-12 h-1 bg-blue-600/20 mt-6 group-hover:w-full transition-all duration-700"></div>
+                </div>
+              ))}
             </div>
           </div>
-          <div className="max-w-7xl mx-auto pt-8 border-t border-slate-100 text-center">
-             <p className="text-[10px] font-black uppercase tracking-[0.3em] text-slate-400">
-               © 2026 Passi City College • Design & Dev by John Dave Labiaga
-             </p>
+        </section>
+
+        {/* FOOTER - THE FINAL TOUCH */}
+        <footer className="bg-slate-900 pt-20 pb-10 px-6 text-white border-t border-white/5">
+          <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-10">
+            <h2 className="text-2xl font-black tracking-tighter italic">PC<span className="text-blue-600 underline">C</span>.</h2>
+            <div className="flex gap-8 text-[10px] font-black uppercase tracking-widest text-slate-500">
+                <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
+                <a href="#" className="hover:text-white transition-colors">Terms of Service</a>
+                <a href="#" className="hover:text-white transition-colors">Contact Support</a>
+            </div>
+            <p className="text-[10px] font-black uppercase tracking-widest text-slate-600">
+                © 2026 Crafted with Passion by Dave Labiaga
+            </p>
           </div>
         </footer>
+
       </main>
+
+      <style jsx global>{`
+        @keyframes slideUp {
+          from { transform: translateY(20px); opacity: 0; }
+          to { transform: translateY(0); opacity: 1; }
+        }
+        @keyframes fadeIn {
+          from { opacity: 0; }
+          to { opacity: 1; }
+        }
+      `}</style>
     </>
   );
 }
