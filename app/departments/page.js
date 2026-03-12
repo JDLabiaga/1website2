@@ -37,7 +37,7 @@ const departments = [
     name: "Hospitality Management", 
     short: "SOHM",
     // Image: Focused on professional kitchen/culinary arts
-    image: "/images/sohm-banner.jpg", 
+    image: "/images/sohm.jpg", 
     desc: "World-class training for the culinary, hotel, and global tourism industry.",
     courses: ["BS in Hospitality Management (BSHM)"]
   },
