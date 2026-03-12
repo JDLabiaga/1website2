@@ -1,0 +1,66 @@
+[
+  {
+    "id": 1,
+    "title": "Founding Anniversary",
+    "date": "March 2024",
+    "category": "Celebration",
+    "images": ["/images/act1.jpg", "/images/act1.1.jpg", "/images/act1.2.jpg", "/images/act1.3.jpg"],
+    "description": "Celebrating years of PCC history with grand parades and cultural presentations."
+  },
+  {
+    "id": 2,
+    "title": "College Week",
+    "date": "February 2024",
+    "category": "Sports",
+    "images": ["/images/act2.jpg","/images/act2.1.jpg","/images/act2.2.jpg","/images/act2.3.jpg","/images/act2.4.jpg","/images/act2.5.jpg"],
+    "description": "The ultimate sports competition where departments battle for the championship."
+  },
+  {
+    "id": 3,
+    "title": "Acquaintance Party",
+    "date": "September 2024",
+    "category": "Celebration",
+    "images": ["/images/act3.jpg"],
+    "description": "A night of music and bonding to welcome new students into the PCC family."
+  },
+  {
+    "id": 4,
+    "title": "Teacher's Day",
+    "date": "October 5, 2024",
+    "category": "Celebration",
+    "images": ["/images/act4.jpg"],
+    "description": "Honoring our mentors for their dedication to student success and character building."
+  },
+  {
+    "id": 5,
+    "title": "Christmas Party",
+    "date": "December 2024",
+    "category": "Celebration",
+    "images": ["/images/act5.jpg"],
+    "description": "Gathering as a community to share gifts and holiday joy across all departments."
+  },
+  {
+    "id": 6,
+    "title": "Do Day",
+    "date": "Quarterly",
+    "category": "Community",
+    "images": ["/images/act6.jpg"],
+    "description": "A dedicated campus clean-up and beautification day for social responsibility."
+  },
+  {
+    "id": 7,
+    "title": "General Orientation",
+    "date": "August 2025",
+    "category": "Academic",
+    "images": ["/images/act7.jpg"],
+    "description": "Welcoming new students with an overview of college life and academic standards."
+  },
+  {
+    "id": 8,
+    "title": "School Elections",
+    "date": "August 2024",
+    "category": "Community",
+    "images": ["/images/act8.jpg"],
+    "description": "Selecting the next generation of student leaders for the Supreme Student Council."
+  }
+]
