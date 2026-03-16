@@ -125,12 +125,12 @@ export default function Home() {
             <div className="flex gap-16">
               <div className="space-y-2">
                 <p className="text-slate-900 font-bold text-[10px] uppercase tracking-widest">Administration</p>
-                <p className="text-slate-400 text-xs">San Lucas, Passi City</p>
+                <p className="text-slate-400 text-xs">Bacuranan, Passi City</p>
                 <p className="text-slate-400 text-xs">Iloilo, Philippines</p>
               </div>
               <div className="text-right">
                 <p className="text-slate-400 text-[9px] font-bold uppercase tracking-widest mb-4">Developed by</p>
-                <p className="text-slate-900 font-serif italic">J. D. Labiaga</p>
+                <p className="text-slate-900 font-serif italic">Passi City College</p>
               </div>
             </div>
           </div>

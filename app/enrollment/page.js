@@ -74,7 +74,7 @@ export default function EnrollmentPage() {
                   <div className="grid md:grid-cols-2 gap-10">
                     <div className="space-y-3">
                       <label className="text-[9px] font-black uppercase text-slate-400 tracking-widest">Legal Surname & Given Names</label>
-                      <input type="text" className="w-full border-b-2 border-slate-100 focus:border-indigo-900 py-3 outline-none font-serif text-lg transition-all bg-transparent" placeholder="Ex: Labiaga, John Dave" />
+                      <input type="text" className="w-full border-b-2 border-slate-100 focus:border-indigo-900 py-3 outline-none font-serif text-lg transition-all bg-transparent" placeholder="Ex: Surname , your name" />
                     </div>
                     <div className="space-y-3">
                       <label className="text-[9px] font-black uppercase text-slate-400 tracking-widest">Primary Contact Protocol</label>
