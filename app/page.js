@@ -12,16 +12,19 @@ export default function Home() {
       <main className="bg-white selection:bg-blue-600 selection:text-white">
         
         {/* HERO SECTION - THE CINEMATIC EXPERIENCE */}
-        <section className="relative min-h-screen flex items-center justify-center bg-slate-900 overflow-hidden">
-          {/* Animated Background Overlay */}
-          <div className="absolute inset-0 z-0">
-            <div className="absolute inset-0 bg-gradient-to-b from-slate-900/40 via-slate-900/80 to-slate-900 z-10"></div>
-            <img 
-              src="/images/history3.png" 
-              className="w-full h-full object-cover scale-105 animate-[pulse_10s_ease-in-out_infinite]" 
-              alt="Campus Background"
-            />
-          </div>
+          <section className="py-20 bg-slate-900 text-center px-6">
+            <div className="max-w-4xl mx-auto">
+              <h1 className="text-5xl font-bold text-white mb-6 uppercase tracking-tight">
+                Passi City <span className="text-blue-500">College</span>
+              </h1>
+              <p className="text-slate-400 text-lg mb-8">
+                Quality Education for a Brighter Future. Join our community today.
+              </p>
+              <button className="bg-blue-600 text-white px-8 py-3 rounded-lg font-bold uppercase text-xs">
+                View Programs
+              </button>
+            </div>
+          </section>
 
           <div className="relative z-20 text-center px-6 max-w-5xl">
             <div className="inline-block mb-6 overflow-hidden">
