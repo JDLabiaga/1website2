@@ -11,57 +11,35 @@ export default function Home() {
       <Navbar />
       <main className="bg-white selection:bg-blue-600 selection:text-white">
         
-        {/* HERO SECTION - THE CINEMATIC EXPERIENCE */}
-          <section className="py-20 bg-slate-900 text-center px-6">
-            <div className="max-w-4xl mx-auto">
-              <h1 className="text-5xl font-bold text-white mb-6 uppercase tracking-tight">
-                Passi City <span className="text-blue-500">College</span>
-              </h1>
-              <p className="text-slate-400 text-lg mb-8">
-                Quality Education for a Brighter Future. Join our community today.
-              </p>
-              <button className="bg-blue-600 text-white px-8 py-3 rounded-lg font-bold uppercase text-xs">
+        {/* HERO SECTION */}
+        <section className="py-32 bg-slate-900 text-center px-6 relative overflow-hidden">
+          {/* Subtle Background Decoration */}
+          <div className="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none">
+            <div className="absolute top-10 left-10 w-64 h-64 bg-blue-600 rounded-full blur-[120px]"></div>
+          </div>
+
+          <div className="max-w-4xl mx-auto relative z-10">
+            <span className="text-blue-400 font-black uppercase tracking-[0.5em] text-[10px] block mb-6">
+              Established 2003 • Passi City, Iloilo
+            </span>
+            <h1 className="text-5xl md:text-8xl font-black text-white mb-6 uppercase tracking-tighter leading-none">
+              Passi City <span className="text-blue-500 italic">College</span>
+            </h1>
+            <p className="text-slate-400 text-lg md:text-xl mb-10 max-w-2xl mx-auto font-medium">
+              Transforming passion into profession. Join the region's fastest-growing academic community today.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <button className="bg-blue-600 text-white px-10 py-4 rounded-full font-black uppercase tracking-widest text-[10px] shadow-xl shadow-blue-500/20 hover:scale-105 transition-transform">
                 View Programs
               </button>
-            </div>
-          </section>
-
-          <div className="relative z-20 text-center px-6 max-w-5xl">
-            <div className="inline-block mb-6 overflow-hidden">
-              <span className="text-blue-400 font-black uppercase tracking-[0.5em] text-[10px] block animate-[slideUp_1s_ease-out]">
-                Established 2003 • Passi City, Iloilo
-              </span>
-            </div>
-            
-            <h1 className="text-6xl md:text-9xl font-black text-white mb-8 tracking-tighter uppercase italic leading-[0.85]">
-              Home of <br/>
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-cyan-400 drop-shadow-2xl">
-                Legends
-              </span>
-            </h1>
-
-            <p className="text-slate-300 max-w-2xl mx-auto text-lg md:text-xl leading-relaxed font-medium mb-12 opacity-0 animate-[fadeIn_1.5s_ease-out_0.5s_forwards]">
-              Transforming passion into profession. Join the region's fastest-growing academic community.
-            </p>
-
-            <div className="flex flex-col sm:flex-row gap-6 justify-center opacity-0 animate-[fadeIn_1.5s_ease-out_1s_forwards]">
-              <button className="group relative bg-blue-600 text-white px-12 py-5 rounded-full font-black uppercase tracking-widest text-[10px] transition-all hover:scale-105 active:scale-95 shadow-2xl shadow-blue-500/40 overflow-hidden">
-                <span className="relative z-10">Explore Programs</span>
-                <div className="absolute inset-0 bg-white opacity-0 group-hover:opacity-20 transition-opacity"></div>
-              </button>
-              <button className="bg-white/5 hover:bg-white/10 backdrop-blur-xl text-white border border-white/20 px-12 py-5 rounded-full font-black uppercase tracking-widest text-[10px] transition-all hover:border-white/40">
+              <button className="bg-white/5 border border-white/10 text-white px-10 py-4 rounded-full font-black uppercase tracking-widest text-[10px] hover:bg-white/10 transition-all">
                 Student Portal
               </button>
             </div>
           </div>
-
-          {/* Scroll Indicator */}
-          <div className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce opacity-50">
-            <div className="w-1 h-12 bg-gradient-to-b from-blue-500 to-transparent rounded-full"></div>
-          </div>
         </section>
 
-        {/* STATS STRIP - IMPACT IN NUMBERS */}
+        {/* STATS STRIP */}
         <section className="relative z-30 -mt-12 max-w-6xl mx-auto px-6">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {[
@@ -70,7 +48,7 @@ export default function Home() {
               { label: 'Faculty', val: '150+' },
               { label: 'Awards', val: '45' }
             ].map((stat, i) => (
-              <div key={i} className="bg-white p-8 rounded-[2rem] shadow-2xl shadow-slate-200/50 text-center border border-slate-50 transition-transform hover:-translate-y-2">
+              <div key={i} className="bg-white p-8 rounded-[2rem] shadow-xl text-center border border-slate-50">
                 <p className="text-3xl font-black text-slate-900 tracking-tighter">{stat.val}</p>
                 <p className="text-[10px] font-black text-blue-600 uppercase tracking-widest mt-1">{stat.label}</p>
               </div>
@@ -78,65 +56,46 @@ export default function Home() {
           </div>
         </section>
 
-        {/* LEADERSHIP SECTION - REFINED */}
+        {/* LEADERSHIP SECTION */}
         <section className="py-32 px-6">
           <div className="max-w-6xl mx-auto">
-            <div className="group relative bg-slate-50 rounded-[4rem] p-8 md:p-20 overflow-hidden">
-                <div className="absolute top-0 right-0 w-1/2 h-full bg-blue-600/5 -skew-x-12 translate-x-20"></div>
-                <div className="relative z-10 flex flex-col md:flex-row items-center gap-16">
-                    <div className="relative">
-                        <div className="absolute inset-0 bg-blue-600 rounded-[3rem] rotate-6 group-hover:rotate-12 transition-transform duration-500"></div>
-                        <img 
-                            src="/images/janice.jpg" 
-                            alt="President" 
-                            className="relative w-64 h-80 object-cover rounded-[3rem] shadow-2xl" 
-                        />
-                    </div>
-                    <div className="flex-1">
-                        <span className="inline-block bg-blue-100 text-blue-700 px-4 py-1 rounded-full text-[10px] font-black uppercase tracking-widest mb-6">
-                            Presidential Message
-                        </span>
-                        <h2 className="text-4xl md:text-5xl font-black text-slate-900 mb-6 tracking-tighter uppercase italic leading-tight">
-                            "A Legacy of <span className="text-blue-600">Innovation</span> and Service."
-                        </h2>
-                        <p className="text-slate-600 text-lg leading-relaxed mb-8 font-medium">
-                            Under the visionary leadership of Dr. Janice Jennifer P. Palmares, PCC stands as a beacon of hope and excellence in Western Visayas.
-                        </p>
-                        <div className="flex items-center gap-4">
-                            <div className="w-12 h-12 rounded-full bg-slate-900 flex items-center justify-center text-white font-bold text-xs italic">JP</div>
-                            <div>
-                                <p className="font-black text-slate-900 uppercase text-sm tracking-tighter leading-none">Dr. Janice Jennifer P. Palmares</p>
-                                <p className="text-blue-600 font-bold text-[10px] uppercase tracking-widest mt-1">College President</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div className="bg-slate-50 rounded-[3rem] p-8 md:p-20 flex flex-col md:flex-row items-center gap-16">
+              <img 
+                src="/images/janice.jpg" 
+                alt="President" 
+                className="w-64 h-80 object-cover rounded-[2.5rem] shadow-2xl border-8 border-white" 
+              />
+              <div className="flex-1 text-center md:text-left">
+                <span className="text-blue-600 font-black uppercase text-[10px] tracking-widest">Presidential Message</span>
+                <h2 className="text-4xl font-black text-slate-900 mt-4 mb-6 tracking-tight uppercase italic">
+                  "A Legacy of <span className="text-blue-600">Innovation</span> and Service."
+                </h2>
+                <p className="text-slate-600 leading-relaxed mb-8">
+                  Under the leadership of Dr. Janice Jennifer P. Palmares, PCC stands as a beacon of excellence in Western Visayas.
+                </p>
+                <p className="font-black text-slate-900 uppercase text-sm tracking-tighter">Dr. Janice Jennifer P. Palmares</p>
+                <p className="text-blue-600 font-bold text-[10px] uppercase tracking-widest">College President</p>
+              </div>
             </div>
           </div>
         </section>
 
-        {/* DEPARTMENTS - INTERACTIVE CARROUSEL STYLE */}
-        <section id="departments" className="py-24 px-6 bg-white">
+        {/* DEPARTMENTS */}
+        <section id="departments" className="py-24 px-6">
           <div className="max-w-7xl mx-auto">
-            <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
-              <h2 className="text-5xl md:text-7xl font-black text-slate-900 uppercase tracking-tighter italic">
-                Our <span className="text-blue-600">Academies.</span>
-              </h2>
-              <a href="/departments" className="group flex items-center gap-3 font-black uppercase tracking-widest text-[10px] text-blue-600">
-                Explore All <span className="w-8 h-8 rounded-full border-2 border-blue-600 flex items-center justify-center group-hover:bg-blue-600 group-hover:text-white transition-all">→</span>
-              </a>
-            </div>
-
-            <div className="grid md:grid-cols-3 gap-6">
-              {departments && departments.slice(0, 3).map((dept, i) => (
-                <div key={dept.id} className="group relative h-[500px] rounded-[3rem] overflow-hidden bg-slate-900 shadow-2xl transition-all duration-700 hover:scale-[0.98]">
-                  <img src={dept.image} className="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:opacity-100 group-hover:scale-110 transition duration-700" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/20 to-transparent"></div>
-                  <div className="absolute bottom-0 left-0 p-10 w-full">
-                    <span className="text-blue-400 font-black text-[10px] uppercase tracking-[0.3em] mb-2 block">{dept.short}</span>
-                    <h3 className="text-2xl font-black text-white uppercase tracking-tighter leading-tight mb-6">{dept.name}</h3>
-                    <button className="bg-white/10 backdrop-blur-md border border-white/20 text-white w-full py-4 rounded-2xl font-black uppercase tracking-widest text-[10px] opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500">
-                      View Department
+            <h2 className="text-5xl font-black text-slate-900 uppercase tracking-tighter mb-16">
+              Our <span className="text-blue-600">Academies.</span>
+            </h2>
+            <div className="grid md:grid-cols-3 gap-8">
+              {departments && departments.slice(0, 3).map((dept) => (
+                <div key={dept.id} className="group relative h-[450px] rounded-[2.5rem] overflow-hidden bg-slate-900">
+                  <img src={dept.image} className="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:scale-110 transition duration-700" alt={dept.name} />
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent"></div>
+                  <div className="absolute bottom-0 p-8 w-full">
+                    <p className="text-blue-400 font-black text-[10px] uppercase mb-2">{dept.short}</p>
+                    <h3 className="text-xl font-black text-white uppercase mb-4">{dept.name}</h3>
+                    <button className="bg-white/10 backdrop-blur-md text-white w-full py-3 rounded-xl text-[10px] font-black uppercase tracking-widest border border-white/20">
+                      View Details
                     </button>
                   </div>
                 </div>
@@ -145,63 +104,37 @@ export default function Home() {
           </div>
         </section>
 
-        {/* NEWS GAZETTE - DARK MODE INTERACTIVE */}
-        <section className="bg-slate-900 py-32 px-6 rounded-t-[5rem] -mt-10 relative z-40">
+        {/* GAZETTE */}
+        <section className="bg-slate-900 py-32 px-6 rounded-t-[4rem]">
           <div className="max-w-7xl mx-auto">
-            <h2 className="text-4xl md:text-6xl font-black text-white tracking-tighter uppercase italic mb-16">
-                The <span className="text-blue-500 underline decoration-8 underline-offset-8">Gazette</span>
+            <h2 className="text-4xl font-black text-white tracking-tighter uppercase italic mb-16">
+              The <span className="text-blue-500">Gazette</span>
             </h2>
-
             <div className="grid lg:grid-cols-3 gap-12">
-              {latestNews.map((item, idx) => (
-                <div key={item.id} className="group cursor-pointer">
-                    <div className="relative aspect-[4/5] rounded-[3rem] overflow-hidden mb-8">
-                        <img 
-                            src={item.image} 
-                            className="w-full h-full object-cover grayscale transition-all duration-700 group-hover:grayscale-0 group-hover:scale-110" 
-                        />
-                        <div className="absolute top-6 left-6 bg-blue-600 text-white px-4 py-1 rounded-full text-[10px] font-black uppercase tracking-widest">
-                            {item.category}
-                        </div>
-                    </div>
-                    <p className="text-blue-500 font-black text-[10px] uppercase tracking-widest mb-2 italic">0{idx + 1} — News Item</p>
-                    <h4 className="text-2xl font-black text-white leading-tight group-hover:text-blue-400 transition-colors uppercase tracking-tighter">
-                        {item.title}
-                    </h4>
-                    <div className="w-12 h-1 bg-blue-600/20 mt-6 group-hover:w-full transition-all duration-700"></div>
+              {latestNews.map((item) => (
+                <div key={item.id} className="group">
+                  <div className="aspect-video rounded-3xl overflow-hidden mb-6">
+                    <img src={item.image} className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all" alt={item.title} />
+                  </div>
+                  <h4 className="text-xl font-black text-white uppercase group-hover:text-blue-400 transition-colors">
+                    {item.title}
+                  </h4>
                 </div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* FOOTER - THE FINAL TOUCH */}
-        <footer className="bg-slate-900 pt-20 pb-10 px-6 text-white border-t border-white/5">
-          <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-10">
-            <h2 className="text-2xl font-black tracking-tighter italic">PC<span className="text-blue-600 underline">C</span>.</h2>
-            <div className="flex gap-8 text-[10px] font-black uppercase tracking-widest text-slate-500">
-                <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
-                <a href="#" className="hover:text-white transition-colors">Terms of Service</a>
-                <a href="#" className="hover:text-white transition-colors">Contact Support</a>
-            </div>
-            <p className="text-[10px] font-black uppercase tracking-widest text-slate-600">
-                © 2026 Crafted with Passion by Dave Labiaga
+        {/* FOOTER */}
+        <footer className="bg-slate-900 pt-20 pb-10 px-6 text-white border-t border-white/5 text-center md:text-left">
+          <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+            <h2 className="text-2xl font-black italic">PC<span className="text-blue-600">C</span>.</h2>
+            <p className="text-[10px] font-black uppercase tracking-widest text-slate-500">
+              © 2026 Crafted with Passion by Dave Labiaga
             </p>
           </div>
         </footer>
-
       </main>
-
-      <style jsx global>{`
-        @keyframes slideUp {
-          from { transform: translateY(20px); opacity: 0; }
-          to { transform: translateY(0); opacity: 1; }
-        }
-        @keyframes fadeIn {
-          from { opacity: 0; }
-          to { opacity: 1; }
-        }
-      `}</style>
     </>
   );
 }
