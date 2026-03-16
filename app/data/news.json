@@ -1,56 +1,56 @@
 [
   {
     "id": "comepp-2025",
-    "title": "PCC Delegates Participate in 35th COMEPP National Conference",
+    "title": "Institutional Delegation Represents PCC at 35th COMEPP Convention",
     "date": "November 14, 2025",
-    "category": "Achievement",
+    "category": "Academic",
     "image": "/images/news1.jpg",
-    "excerpt": "PCC students and faculty represented the institution in the Business Pitch Competition among 40 prestigious schools nationwide.",
-    "content": "Passi City College demonstrated its academic prowess at the 35th COMEPP National Conference. The delegation engaged in high-level business simulations and competitive pitching, standing toe-to-toe with 40 prestigious institutions. This participation highlights PCC's commitment to exposing students to national standards of entrepreneurship and management excellence."
+    "excerpt": "Undergraduate students participated in a national business simulation alongside forty academic institutions.",
+    "content": "Passi City College demonstrated high academic standards at the 35th COMEPP National Convention. The delegation participated in rigorous business modeling and strategic pitching competitions, engaging with peers from forty premier institutions. This initiative underscores our commitment to aligning student competencies with national entrepreneurship benchmarks."
   },
   {
     "id": "soict-short-film",
-    "title": "SOICT Dominates CineStep: 'Epektus' Wins Best Short Film",
+    "title": "Division of Computing Receives Top Honors at CineStep Festival",
     "date": "March 2026",
-    "category": "Achievement",
+    "category": "Merit",
     "image": "/images/news2.jpg",
-    "excerpt": "The School of Information and Communication Technology swept the awards including Best Cinematography and Best Director.",
-    "content": "In a historic win for the School of Information and Communication Technology, the short film 'Epektus' bagged the top prize at the CineStep Film Festival. Beyond the Best Short Film award, the team also secured Best Cinematography and Best Director, proving that PCC students are at the forefront of digital storytelling and multimedia production in the region."
+    "excerpt": "The production 'Epektus' secured multiple distinctions, including Best Technical Direction and Cinematography.",
+    "content": "The Division of Computing & Information Systems achieved significant recognition at the CineStep Film Festival. The project 'Epektus' was conferred the award for Best Short Film, with additional citations for Technical Direction and Cinematography. This success reflects the department's mastery of digital media and contemporary visual communication."
   },
   {
     "id": "college-week-2026",
-    "title": "Game On: Legends Rise in PCC E-Sports Tournament",
+    "title": "Inaugural Electronic Sports Colloquium Held During College Week",
     "date": "February 2026",
-    "category": "Sports",
+    "category": "Student Life",
     "image": "/images/news3.jpg",
-    "excerpt": "The campus turns into a warzone of talent as College Week 2026 kicks off with a massive Mobile Legends showdown.",
-    "content": "College Week 2026 reached a fever pitch with the introduction of the Mobile Legends Tournament. Students from all departments gathered to witness a display of strategic brilliance and teamwork. This E-sports event has become a staple of campus life, reflecting the modern competitive spirit of the PCC 'Legends'."
+    "excerpt": "Strategic competition took center stage as various units participated in the inter-departmental digital tournament.",
+    "content": "The 2026 College Week featured the successful integration of a Digital Strategic Tournament. Students across all academic units engaged in a showcase of collaborative strategy and cognitive agility. This event highlights the evolving nature of competitive extracurricular activities within the modern collegiate environment."
   },
   {
     "id": "palmares-alcor-president",
-    "title": "Dr. Janice Jennifer Palmares Elected ALCOR VI President",
+    "title": "Dr. Palmares Assumes Presidency of ALCOR VI Regional Council",
     "date": "March 2026",
-    "category": "Admin",
+    "category": "Governance",
     "image": "/images/news4.jpg",
-    "excerpt": "Passi City College is set to host ALCOR VI and XVIII Hinampang 2026 this coming April.",
-    "content": "The election of Dr. Janice Jennifer P. Palmares as ALCOR VI President marks a significant milestone for Passi City College. Under her leadership, the institution is preparing to host the prestigious Hinampang 2026 this April. This hosting duty brings hundreds of delegates to Passi City, showcasing our hospitality and world-class facilities."
+    "excerpt": "Passi City College designated as the host venue for the upcoming Regional Hinampang 2026.",
+    "content": "The election of Dr. Janice Jennifer P. Palmares as President of the ALCOR VI Council marks a definitive era of leadership for Passi City College. In a concurrent development, the institution has been selected to host the Regional Hinampang 2026 this April, an event expected to welcome hundreds of academic and athletic delegates to our facilities."
   },
   {
     "id": "sobm-outreach",
-    "title": "SOBM Empowers Communities Through Financial Literacy",
+    "title": "Fiscal Literacy Symposium Conducted for Community Extension",
     "date": "October 10, 2025",
     "category": "Extension",
     "image": "/images/news5.jpg",
-    "excerpt": "The School of Business Management successfully held an outreach program at Barangay Imbang Grande.",
-    "content": "The School of Business Management (SOBM) extended its expertise to Barangay Imbang Grande through a Financial Literacy and Entrepreneurship Symposium. Faculty and students shared vital skills in budgeting and small business management, fulfilling PCC's mission of community-anchored social responsibility."
+    "excerpt": "The Business Department facilitated a community-based seminar on economic management in Brgy. Imbang Grande.",
+    "content": "The Division of Corporate & Fiscal Management (DCFM) fulfilled its social responsibility mandate through an outreach program at Barangay Imbang Grande. The symposium focused on fiscal discipline, budgeting, and small-scale economic governance, bridging the gap between academic theory and practical community application."
   },
   {
     "id": "pro6-bisoc-opening",
-    "title": "Dr. Palmares Keynotes PRO6 Internal Security Course Opening",
+    "title": "Dr. Palmares Delivers Keynote at PRO6 Security Training Inauguration",
     "date": "February 27, 2026",
-    "category": "Community",
+    "category": "Public Affairs",
     "image": "/images/news6.jpg",
-    "excerpt": "PCC President highlights values and ethical leadership for 280 PNP personnel at Camp Delgado.",
-    "content": "Dr. Janice Jennifer P. Palmares served as the Guest of Honor and Speaker for the opening of the PRO6 Basic Internal Security Operations Course (BISOC). Addressing 280 PNP personnel at Camp Delgado, she emphasized the critical role of ethical leadership and moral integrity in maintaining public safety and national security."
+    "excerpt": "Institutional head emphasizes the intersection of professional ethics and national security protocols.",
+    "content": "Dr. Janice Jennifer P. Palmares presided as the keynote speaker for the inauguration of the PRO6 Basic Internal Security Operations Course (BISOC). Addressing 280 PNP personnel, she articulated the vital necessity of moral fortitude and ethical governance in the execution of internal security and public service duties."
   }
 ]

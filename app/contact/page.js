@@ -5,83 +5,94 @@ export default function ContactPage() {
   return (
     <>
       <Navbar />
-      <main className="pt-32 pb-20 bg-white min-h-screen">
-        <div className="max-w-7xl mx-auto px-6">
+      <main className="pt-48 pb-32 bg-[#FAF9F6] min-h-screen">
+        <div className="max-w-7xl mx-auto px-8">
           
-          <div className="mb-16">
-            <span className="text-blue-600 font-black uppercase tracking-[0.4em] text-[10px]">Passi City, Iloilo</span>
-            <h1 className="text-7xl font-black text-slate-900 tracking-tighter uppercase italic mt-2">
-              Contact <span className="text-blue-600">& Location.</span>
+          {/* EDITORIAL HEADER */}
+          <div className="mb-24 pb-12 border-b border-slate-200">
+            <span className="text-indigo-600 font-bold uppercase tracking-[0.5em] text-[10px] block mb-4">
+              Iloilo Provincial Registry
+            </span>
+            <h1 className="text-6xl md:text-8xl font-serif font-light text-slate-900 tracking-tight leading-none">
+              Location <span className="italic font-serif">&</span> <br/>Communication.
             </h1>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-12 items-start">
+          <div className="grid lg:grid-cols-12 gap-16 items-stretch">
             
-            {/* LEFT SIDE: CONTACT INFO */}
-            <div className="space-y-8">
-              <div className="bg-slate-50 rounded-[3rem] p-10 border border-slate-100">
-                <h2 className="text-2xl font-black text-slate-900 uppercase italic mb-8">Connect with us</h2>
+            {/* LEFT SIDE: REGISTRY DETAILS */}
+            <div className="lg:col-span-5 space-y-12">
+              <div className="bg-white border border-slate-200 p-12 shadow-sm relative overflow-hidden">
+                {/* Accent line */}
+                <div className="absolute top-0 left-0 w-full h-1 bg-indigo-950"></div>
                 
-                <div className="space-y-6">
-                  <div className="flex items-start gap-5">
-                    <div className="w-12 h-12 bg-blue-600 rounded-2xl flex items-center justify-center text-white shrink-0 shadow-lg shadow-blue-100">
-                      📍
+                <h2 className="text-[10px] font-bold text-slate-400 uppercase tracking-[0.4em] mb-12">Institutional Directory</h2>
+                
+                <div className="space-y-12">
+                  {/* Address Section */}
+                  <div className="flex items-start gap-8">
+                    <div className="w-10 h-10 border border-slate-100 flex items-center justify-center text-indigo-950 font-serif italic text-lg shrink-0">
+                      A
                     </div>
                     <div>
-                      <p className="text-[10px] font-black uppercase text-slate-400 tracking-widest mb-1">Our Campus</p>
-                      <p className="text-slate-900 font-bold leading-relaxed">
+                      <p className="text-[9px] font-bold uppercase text-indigo-600 tracking-widest mb-3">Campus Residence</p>
+                      <p className="text-slate-900 font-serif leading-relaxed text-lg">
                         Passi City College<br/>
                         Brgy. Bacuranan, Passi City,<br/>
-                        Iloilo, Philippines
+                        Iloilo, Philippines 5037
                       </p>
                     </div>
                   </div>
 
-                  <div className="flex items-start gap-5">
-                    <div className="w-12 h-12 bg-blue-600 rounded-2xl flex items-center justify-center text-white shrink-0 shadow-lg shadow-blue-100">
-                      📞
+                  {/* Contact Section */}
+                  <div className="flex items-start gap-8">
+                    <div className="w-10 h-10 border border-slate-100 flex items-center justify-center text-indigo-950 font-serif italic text-lg shrink-0">
+                      C
                     </div>
                     <div>
-                      <p className="text-[10px] font-black uppercase text-slate-400 tracking-widest mb-1">Phone Number</p>
-                      <p className="text-slate-900 font-bold">(033) 311 - 5236</p>
+                      <p className="text-[9px] font-bold uppercase text-indigo-600 tracking-widest mb-3">Telecommunications</p>
+                      <p className="text-slate-900 font-serif text-lg">(033) 311 - 5236</p>
                     </div>
                   </div>
 
-                  <div className="flex items-start gap-5">
-                    <div className="w-12 h-12 bg-blue-600 rounded-2xl flex items-center justify-center text-white shrink-0 shadow-lg shadow-blue-100">
-                      ✉️
+                  {/* Digital Section */}
+                  <div className="flex items-start gap-8">
+                    <div className="w-10 h-10 border border-slate-100 flex items-center justify-center text-indigo-950 font-serif italic text-lg shrink-0">
+                      D
                     </div>
                     <div>
-                      <p className="text-[10px] font-black uppercase text-slate-400 tracking-widest mb-1">Email Support</p>
-                      <p className="text-slate-900 font-bold">registrar@passicitycollege.edu.ph</p>
+                      <p className="text-[9px] font-bold uppercase text-indigo-600 tracking-widest mb-3">Digital Archives</p>
+                      <p className="text-slate-900 font-serif text-lg">registrar@passicitycollege.edu.ph</p>
                     </div>
                   </div>
                 </div>
               </div>
 
-              {/* PCC VIBE BOX */}
-              <div className="bg-slate-900 rounded-[2.5rem] p-8 text-white shadow-2xl">
-                <p className="text-blue-400 font-black uppercase tracking-widest text-[10px] mb-4">Official Facebook</p>
-                <p className="text-sm font-bold leading-relaxed mb-4">
-                  Follow the official Passi City College page for the latest announcements on enrollment and school activities.
+              {/* SOCIAL MEDIA DISPATCH */}
+              <div className="bg-indigo-950 p-10 text-white shadow-2xl relative overflow-hidden group">
+                <div className="absolute -right-4 -top-4 w-24 h-24 border border-white/5 rounded-full group-hover:scale-150 transition-transform duration-1000"></div>
+                <p className="text-indigo-300 font-bold uppercase tracking-[0.3em] text-[9px] mb-6">Social Dispatch</p>
+                <p className="text-lg font-serif italic leading-relaxed mb-8 text-indigo-50 font-light">
+                  "For real-time administrative updates and collegiate announcements, please refer to our verified Facebook communications."
                 </p>
-                <div className="h-1 w-20 bg-blue-600 rounded-full"></div>
+                <div className="h-px w-16 bg-indigo-400"></div>
               </div>
             </div>
 
-            {/* RIGHT SIDE: CORRECT PASSI CITY MAP */}
-            <div className="h-[500px] lg:h-full min-h-[500px] bg-slate-200 rounded-[3rem] overflow-hidden relative border border-slate-100 shadow-2xl group">
-              {/* Updated Iframe for Passi City College */}
+            {/* RIGHT SIDE: CARTOGRAPHY (MAP) */}
+            <div className="lg:col-span-7 h-[600px] bg-white border border-slate-200 p-3 shadow-sm relative group">
               <iframe 
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3916.4800778731115!2d122.6517616!3d11.1073145!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33af907498c8973b%3A0x6b1897304122d2f7!2sPassi%20City%20College!5e0!3m2!1sen!2sph!4v1709600000000!5m2!1sen!2sph" 
-                className="w-full h-full grayscale hover:grayscale-0 transition-all duration-700"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3916.347594371485!2d122.65147577582524!3d11.012543354784948!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33af9f688849b383%3A0x89299479e0a05a8b!2sPassi%20City%20College!5e0!3m2!1sen!2sph!4v1715634567890!5m2!1sen!2sph" 
+                className="w-full h-full grayscale opacity-80 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-1000"
                 style={{ border: 0 }} 
                 allowFullScreen="" 
                 loading="lazy">
               </iframe>
-              <div className="absolute bottom-6 left-6 right-6 bg-white/90 backdrop-blur p-4 rounded-2xl shadow-xl pointer-events-none transition-all">
-                 <p className="text-[10px] font-black uppercase tracking-widest text-blue-600 mb-1">Campus Landmark</p>
-                 <p className="text-slate-900 font-bold text-xs uppercase">Located in the quiet area of Brgy. Bacuranan, perfect for focused learning.</p>
+              
+              {/* Floating Map Label */}
+              <div className="absolute bottom-10 left-10 right-10 bg-white p-6 border border-slate-100 shadow-xl pointer-events-none translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-700">
+                 <p className="text-[9px] font-bold uppercase tracking-[0.3em] text-indigo-600 mb-2">Cartographic Reference</p>
+                 <p className="text-slate-800 font-serif text-sm">Passi City College Campus — Bacuranan District</p>
               </div>
             </div>
 

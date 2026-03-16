@@ -14,22 +14,28 @@ export default function EnrollmentPage() {
     return (
       <>
         <Navbar />
-        <main className="pt-40 pb-20 bg-slate-50 min-h-screen flex items-center justify-center">
-          <div className="max-w-md w-full bg-white rounded-[3rem] p-12 shadow-2xl text-center border-4 border-blue-600 animate-in zoom-in-95 duration-500">
-            <div className="w-20 h-20 bg-blue-600 text-white rounded-full flex items-center justify-center text-3xl mx-auto mb-6">✓</div>
-            <h2 className="text-3xl font-black text-slate-900 uppercase italic leading-none mb-2">Application<br/><span className="text-blue-600">Received!</span></h2>
-            <p className="text-slate-500 font-bold text-[10px] uppercase tracking-widest mb-8 text-pretty">Your digital admission slip has been generated.</p>
+        <main className="pt-40 pb-20 bg-[#FAF9F6] min-h-screen flex items-center justify-center px-6">
+          <div className="max-w-xl w-full bg-white p-12 border border-slate-200 shadow-2xl text-center relative">
+            <div className="absolute top-0 left-0 w-full h-1 bg-indigo-900"></div>
+            <h2 className="text-4xl font-serif italic text-slate-900 mb-4">Submission Verified</h2>
+            <p className="text-slate-400 font-bold text-[10px] uppercase tracking-[0.3em] mb-12">
+              Official Admission Registry Record Generated
+            </p>
             
-            <div className="bg-slate-50 rounded-2xl p-6 mb-8 border-2 border-dashed border-slate-200">
-              <p className="text-[10px] font-black uppercase text-slate-400 mb-1">Reference Number</p>
-              <p className="text-2xl font-mono font-black text-slate-900 tracking-wider">PCC-{refNumber}</p>
+            <div className="bg-slate-50 border border-slate-200 p-8 mb-10">
+              <p className="text-[9px] font-black uppercase text-indigo-600 mb-2 tracking-widest">Digital Docket ID</p>
+              <p className="text-3xl font-mono text-slate-900">REG-PCC-{refNumber}</p>
             </div>
+
+            <p className="text-xs text-slate-500 leading-relaxed mb-12 italic">
+              Please preserve this reference number. A formal notification will be dispatched to your registered contact details following administrative review.
+            </p>
 
             <button 
               onClick={() => window.location.href = '/'}
-              className="w-full bg-slate-900 text-white py-5 rounded-2xl font-black uppercase tracking-widest hover:bg-blue-600 transition-colors"
+              className="w-full bg-indigo-900 text-white py-4 text-[10px] font-bold uppercase tracking-[0.4em] hover:bg-slate-800 transition-all"
             >
-              Back to Home
+              Return to Institutional Index
             </button>
           </div>
         </main>
@@ -40,81 +46,96 @@ export default function EnrollmentPage() {
   return (
     <>
       <Navbar />
-      <main className="pt-32 pb-20 bg-slate-50 min-h-screen font-sans">
-        <div className="max-w-3xl mx-auto px-6">
-          <div className="text-center mb-12">
-            <span className="text-blue-600 font-black uppercase tracking-[0.4em] text-[10px]">PCC Admissions</span>
-            <h1 className="text-6xl font-black text-slate-900 tracking-tighter uppercase italic mt-2">
-              Online <span className="text-blue-600">Enrollment.</span>
+      <main className="pt-48 pb-20 bg-[#FAF9F6] min-h-screen">
+        <div className="max-w-4xl mx-auto px-8">
+          
+          <div className="mb-16 border-l-4 border-indigo-900 pl-8">
+            <span className="text-indigo-600 font-bold uppercase tracking-[0.5em] text-[10px]">Office of the Registrar</span>
+            <h1 className="text-5xl font-serif text-slate-900 mt-4">
+              Academic <span className="italic">Registration</span>
             </h1>
+            <p className="text-slate-400 text-sm mt-2 font-light">AY 2026-2027 Student Enrollment Portal</p>
           </div>
 
-          <div className="bg-white rounded-[3rem] shadow-xl border border-slate-100 p-8 md:p-12 relative overflow-hidden">
-            {/* Step Indicators */}
-            <div className="flex justify-between mb-12 relative z-10">
+          <div className="bg-white border border-slate-200 shadow-sm overflow-hidden">
+            {/* Professional Progress Bar */}
+            <div className="flex border-b border-slate-100">
               {[1, 2, 3].map((num) => (
-                <div key={num} className="flex flex-col items-center gap-2">
-                  <div className={`w-10 h-10 rounded-full flex items-center justify-center font-black text-sm transition-all duration-500 ${step >= num ? 'bg-blue-600 text-white' : 'bg-slate-100 text-slate-400'}`}>
-                    {num}
-                  </div>
+                <div key={num} className={`flex-1 py-4 text-center text-[10px] font-bold uppercase tracking-widest transition-all ${step === num ? 'bg-indigo-950 text-white' : 'text-slate-300'}`}>
+                  Phase 0{num} {num === 1 ? '— Identification' : num === 2 ? '— Placement' : '— Declaration'}
                 </div>
               ))}
-              <div className="absolute top-5 left-0 w-full h-0.5 bg-slate-100 -z-10">
-                <div className="h-full bg-blue-600 transition-all duration-500" style={{ width: `${(step - 1) * 50}%` }}></div>
-              </div>
             </div>
 
-            {step === 1 && (
-              <div className="space-y-6 animate-in fade-in slide-in-from-right-4">
-                <h2 className="text-2xl font-black text-slate-900 uppercase italic">Basic Details</h2>
-                <div className="grid gap-6">
-                  <div className="space-y-2">
-                    <label className="text-[10px] font-black uppercase text-slate-400 ml-2">Full Legal Name</label>
-                    <input type="text" className="w-full bg-slate-50 border-2 border-transparent focus:border-blue-600 rounded-2xl p-4 outline-none font-bold transition-all" placeholder="Enter name..." />
+            <div className="p-10 md:p-16">
+              {step === 1 && (
+                <div className="space-y-10 animate-in fade-in duration-700">
+                  <h2 className="text-2xl font-serif italic text-slate-800">Section I: Personal Identification</h2>
+                  <div className="grid md:grid-cols-2 gap-10">
+                    <div className="space-y-3">
+                      <label className="text-[9px] font-black uppercase text-slate-400 tracking-widest">Legal Surname & Given Names</label>
+                      <input type="text" className="w-full border-b-2 border-slate-100 focus:border-indigo-900 py-3 outline-none font-serif text-lg transition-all bg-transparent" placeholder="Ex: Labiaga, John Dave" />
+                    </div>
+                    <div className="space-y-3">
+                      <label className="text-[9px] font-black uppercase text-slate-400 tracking-widest">Primary Contact Protocol</label>
+                      <input type="text" className="w-full border-b-2 border-slate-100 focus:border-indigo-900 py-3 outline-none font-serif text-lg transition-all bg-transparent" placeholder="+63 000 000 0000" />
+                    </div>
                   </div>
-                  <div className="space-y-2">
-                    <label className="text-[10px] font-black uppercase text-slate-400 ml-2">Contact Number</label>
-                    <input type="text" className="w-full bg-slate-50 border-2 border-transparent focus:border-blue-600 rounded-2xl p-4 outline-none font-bold transition-all" placeholder="+63 900 000 0000" />
+                  <div className="pt-10 flex justify-end">
+                    <button onClick={nextStep} className="bg-indigo-900 text-white px-12 py-4 text-[10px] font-bold uppercase tracking-[0.3em] hover:bg-slate-800 transition-all">
+                      Proceed to Placement →
+                    </button>
                   </div>
                 </div>
-                <button onClick={nextStep} className="w-full bg-blue-600 text-white py-5 rounded-2xl font-black uppercase tracking-widest mt-4">Continue →</button>
-              </div>
-            )}
+              )}
 
-            {step === 2 && (
-              <div className="space-y-6 animate-in fade-in slide-in-from-right-4">
-                <h2 className="text-2xl font-black text-slate-900 uppercase italic">Department Selection</h2>
-                <div className="space-y-2">
-                  <label className="text-[10px] font-black uppercase text-slate-400 ml-2">Choose your program</label>
-                  <select className="w-full bg-slate-50 border-2 border-transparent focus:border-blue-600 rounded-2xl p-4 outline-none font-bold appearance-none transition-all">
-                    <option>BS in Information Technology</option>
-                    <option>BS in Criminology</option>
-                    <option>BS in Hospitality Management</option>
-                    <option>Business Administration</option>
-                  </select>
+              {step === 2 && (
+                <div className="space-y-10 animate-in fade-in duration-700">
+                  <h2 className="text-2xl font-serif italic text-slate-800">Section II: Program Selection</h2>
+                  <div className="space-y-3">
+                    <label className="text-[9px] font-black uppercase text-slate-400 tracking-widest">Designated Academic Division</label>
+                    <select className="w-full border-b-2 border-slate-100 focus:border-indigo-900 py-4 outline-none font-serif text-lg bg-transparent appearance-none">
+                      <option>Division of Computing & Information Systems</option>
+                      <option>Department of Criminological Research</option>
+                      <option>Institute of Hospitality & Global Tourism</option>
+                      <option>Division of Corporate & Fiscal Management</option>
+                      <option>School of Pedagogy & Teacher Education</option>
+                    </select>
+                  </div>
+                  <div className="pt-10 flex gap-6 justify-end">
+                    <button onClick={prevStep} className="text-[10px] font-bold uppercase tracking-widest text-slate-400 hover:text-indigo-900">Previous</button>
+                    <button onClick={nextStep} className="bg-indigo-900 text-white px-12 py-4 text-[10px] font-bold uppercase tracking-[0.3em] hover:bg-slate-800 transition-all">
+                      Review Declaration →
+                    </button>
+                  </div>
                 </div>
-                <div className="flex gap-4">
-                  <button onClick={prevStep} className="flex-1 border-2 border-slate-100 text-slate-400 py-5 rounded-2xl font-black uppercase">Back</button>
-                  <button onClick={nextStep} className="flex-[2] bg-blue-600 text-white py-5 rounded-2xl font-black uppercase tracking-widest">Continue →</button>
-                </div>
-              </div>
-            )}
+              )}
 
-            {step === 3 && (
-              <div className="space-y-6 animate-in fade-in slide-in-from-right-4">
-                <h2 className="text-2xl font-black text-slate-900 uppercase italic text-center">Final Review</h2>
-                <div className="p-6 bg-blue-50 rounded-3xl border-2 border-blue-100">
-                  <p className="text-blue-900 text-sm font-medium text-center italic">
-                    By clicking submit, you agree that all information provided is true and correct for PCC admission records.
-                  </p>
+              {step === 3 && (
+                <div className="space-y-10 animate-in fade-in duration-700">
+                  <h2 className="text-2xl font-serif italic text-slate-800 text-center">Section III: Institutional Declaration</h2>
+                  <div className="p-10 bg-slate-50 border-l-4 border-indigo-900">
+                    <p className="text-slate-600 text-sm font-serif leading-relaxed italic">
+                      "I hereby certify that the information provided herein is an accurate representation of my personal and academic records. I acknowledge the institutional policies of Passi City College and agree to adhere to the administrative protocols governing the admission process."
+                    </p>
+                  </div>
+                  <div className="pt-10 flex gap-8 justify-center items-center">
+                    <button onClick={prevStep} className="text-[10px] font-bold uppercase tracking-widest text-slate-400 hover:text-indigo-900">Amend Details</button>
+                    <button 
+                      onClick={() => setSubmitted(true)} 
+                      className="bg-slate-900 text-white px-16 py-5 text-[10px] font-bold uppercase tracking-[0.4em] hover:bg-indigo-900 transition-all shadow-xl"
+                    >
+                      Formalize Submission
+                    </button>
+                  </div>
                 </div>
-                <div className="flex gap-4">
-                  <button onClick={prevStep} className="flex-1 border-2 border-slate-100 text-slate-400 py-5 rounded-2xl font-black uppercase">Back</button>
-                  <button onClick={() => setSubmitted(true)} className="flex-[2] bg-slate-900 text-white py-5 rounded-2xl font-black uppercase tracking-widest">Confirm & Submit</button>
-                </div>
-              </div>
-            )}
+              )}
+            </div>
           </div>
+          
+          <p className="text-center mt-12 text-[9px] text-slate-400 font-bold uppercase tracking-[0.4em]">
+            Official Registrar Document — Passi City College
+          </p>
         </div>
       </main>
     </>

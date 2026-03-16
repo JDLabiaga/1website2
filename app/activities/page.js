@@ -10,7 +10,7 @@ function GalleryContent() {
   const categoryQuery = searchParams.get('category');
   
   const [filter, setFilter] = useState('All');
-  const [selectedImg, setSelectedImg] = useState(null); // Stores {event, imgUrl, index}
+  const [selectedImg, setSelectedImg] = useState(null);
 
   useEffect(() => {
     if (categoryQuery) setFilter(categoryQuery);
@@ -22,7 +22,6 @@ function GalleryContent() {
     ? eventsData 
     : eventsData.filter(act => act.category === filter);
 
-  // Logic to handle Next/Previous inside the modal
   const navigateImage = (direction) => {
     if (!selectedImg) return;
     const currentEvent = eventsData.find(e => e.id === selectedImg.eventId);
@@ -31,10 +30,7 @@ function GalleryContent() {
 
     if (newIndex >= 0 && newIndex < images.length) {
       setSelectedImg({
-        eventId: selectedImg.eventId,
-        title: selectedImg.title,
-        description: selectedImg.description,
-        category: selectedImg.category,
+        ...selectedImg,
         imgUrl: images[newIndex],
         imgIndex: newIndex
       });
@@ -42,32 +38,46 @@ function GalleryContent() {
   };
 
   return (
-    <div className="max-w-7xl mx-auto px-6">
+    <div className="max-w-7xl mx-auto px-8">
       
-      {/* HEADER & BACK BUTTON */}
-      <div className="mb-12">
-        <Link href="/events" className="inline-flex items-center gap-2 text-blue-600 font-black text-[10px] uppercase tracking-[0.2em] mb-8 hover:-translate-x-2 transition-transform">
-          <span className="text-lg">←</span> Back to Events
-        </Link>
-        <h1 className="text-7xl font-black text-slate-900 tracking-tighter uppercase italic">
-          Campus <span className="text-blue-600">Life.</span>
-        </h1>
+      {/* ARCHIVE HEADER */}
+      <div className="mb-24 flex flex-col md:flex-row justify-between items-end gap-8 pb-12 border-b border-slate-200">
+        <div>
+          <Link href="/events" className="inline-flex items-center gap-3 text-indigo-600 font-bold text-[10px] uppercase tracking-[0.3em] mb-10 hover:-translate-x-2 transition-all">
+            <span>←</span> Return to Registry
+          </Link>
+          <h1 className="text-6xl md:text-8xl font-serif font-light text-slate-900 tracking-tight leading-none">
+            Campus <span className="italic font-serif">Exhibition.</span>
+          </h1>
+        </div>
+        <div className="text-right">
+          <p className="text-[10px] font-bold text-slate-400 uppercase tracking-[0.4em] mb-2">Ref: 2025-2026 Archive</p>
+          <p className="text-sm font-serif italic text-indigo-900">Documenting the Student Experience</p>
+        </div>
       </div>
 
-      {/* FILTER TABS */}
-      <div className="flex flex-wrap gap-4 mb-12">
+      {/* REFINED CATEGORY NAVIGATION */}
+      <div className="flex flex-wrap gap-12 mb-20 border-b border-slate-100 pb-8">
         {categories.map((cat) => (
-          <button key={cat} onClick={() => setFilter(cat)}
-            className={`px-8 py-3 rounded-2xl text-[10px] font-black uppercase tracking-widest transition-all ${
-              filter === cat ? 'bg-blue-600 text-white shadow-xl shadow-blue-200' : 'bg-slate-100 text-slate-400 hover:bg-slate-200'
-            }`}>
+          <button 
+            key={cat} 
+            onClick={() => setFilter(cat)}
+            className={`text-[10px] font-bold uppercase tracking-[0.4em] transition-all relative pb-4 ${
+              filter === cat 
+                ? 'text-indigo-600' 
+                : 'text-slate-400 hover:text-slate-900'
+            }`}
+          >
             {cat}
+            {filter === cat && (
+              <span className="absolute bottom-[-1px] left-0 w-full h-[2px] bg-indigo-600 animate-in slide-in-from-left-full"></span>
+            )}
           </button>
         ))}
       </div>
 
-      {/* PHOTO GRID (Shows every image from every event) */}
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {/* EXHIBITION GRID */}
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-12">
         {filteredEvents.map((event) => 
           event.images.map((imgUrl, idx) => (
             <div 
@@ -80,44 +90,59 @@ function GalleryContent() {
                 imgUrl: imgUrl,
                 imgIndex: idx
               })}
-              className="group relative bg-slate-100 rounded-[2.5rem] overflow-hidden aspect-[4/5] cursor-zoom-in shadow-sm hover:shadow-2xl transition-all duration-500"
+              className="group cursor-crosshair"
             >
-              <img src={imgUrl} alt={event.title} className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
-              <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-transparent to-transparent opacity-80"></div>
-              <div className="absolute inset-0 p-10 flex flex-col justify-end">
-                <span className="bg-blue-600 text-white text-[8px] font-black px-3 py-1 rounded-full uppercase tracking-widest w-fit mb-3">{event.category}</span>
-                <h3 className="text-2xl font-black text-white uppercase italic leading-none">{event.title}</h3>
+              <div className="relative aspect-[4/5] overflow-hidden bg-white p-2 border border-slate-200 transition-all duration-700 group-hover:shadow-2xl">
+                <img 
+                  src={imgUrl} 
+                  alt={event.title} 
+                  className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-1000 scale-100 group-hover:scale-105" 
+                />
+              </div>
+              <div className="mt-6">
+                <p className="text-[9px] font-bold text-indigo-600 uppercase tracking-widest mb-2">{event.category}</p>
+                <h3 className="text-lg font-serif italic text-slate-900 group-hover:text-indigo-900 transition-colors">{event.title}</h3>
               </div>
             </div>
           ))
         )}
       </div>
 
-      {/* LIGHTBOX MODAL */}
+      {/* EXHIBITION LIGHTBOX */}
       {selectedImg && (
-        <div className="fixed inset-0 z-[100] bg-slate-950/95 backdrop-blur-xl flex items-center justify-center p-6" onClick={() => setSelectedImg(null)}>
-          <div className="max-w-6xl w-full bg-white rounded-[3rem] overflow-hidden grid md:grid-cols-3 relative animate-in fade-in zoom-in-95 duration-300" onClick={e => e.stopPropagation()}>
+        <div className="fixed inset-0 z-[100] bg-[#FAF9F6] flex items-center justify-center p-0 md:p-12" onClick={() => setSelectedImg(null)}>
+          <div className="w-full h-full max-w-[1400px] flex flex-col md:flex-row bg-white shadow-2xl relative animate-in fade-in duration-500" onClick={e => e.stopPropagation()}>
             
-            {/* Image Section */}
-            <div className="md:col-span-2 h-[50vh] md:h-[80vh] relative bg-black">
-              <img src={selectedImg.imgUrl} className="w-full h-full object-contain" alt={selectedImg.title} />
+            {/* Visual Panel */}
+            <div className="flex-1 bg-slate-50 relative group flex items-center justify-center p-8">
+              <img src={selectedImg.imgUrl} className="max-w-full max-h-full object-contain shadow-2xl" alt={selectedImg.title} />
               
-              {/* Navigation Arrows */}
-              <div className="absolute inset-0 flex items-center justify-between px-4">
-                <button onClick={() => navigateImage(-1)} className="w-12 h-12 rounded-full bg-white/10 hover:bg-white text-white hover:text-black transition-all font-black">←</button>
-                <button onClick={() => navigateImage(1)} className="w-12 h-12 rounded-full bg-white/10 hover:bg-white text-white hover:text-black transition-all font-black">→</button>
+              <div className="absolute inset-0 flex items-center justify-between px-8 opacity-0 group-hover:opacity-100 transition-opacity">
+                <button onClick={() => navigateImage(-1)} className="w-16 h-16 border border-slate-200 bg-white text-slate-900 hover:bg-slate-900 hover:text-white transition-all text-xl">←</button>
+                <button onClick={() => navigateImage(1)} className="w-16 h-16 border border-slate-200 bg-white text-slate-900 hover:bg-slate-900 hover:text-white transition-all text-xl">→</button>
               </div>
             </div>
 
-            {/* Info Section */}
-            <div className="p-12 flex flex-col justify-center">
-              <span className="text-blue-600 font-black uppercase tracking-widest text-[10px] mb-4">{selectedImg.category}</span>
-              <h2 className="text-4xl font-black text-slate-900 uppercase italic mb-6 leading-none">{selectedImg.title}</h2>
-              <p className="text-slate-500 leading-relaxed font-medium mb-10">{selectedImg.description}</p>
+            {/* Information Panel */}
+            <div className="w-full md:w-[450px] p-12 md:p-20 flex flex-col border-l border-slate-100">
+              <span className="text-indigo-600 font-bold uppercase tracking-[0.4em] text-[10px] mb-12">Archive Entry</span>
               
-              <button onClick={() => setSelectedImg(null)} className="w-full bg-slate-900 text-white py-5 rounded-2xl font-black text-[10px] uppercase tracking-widest hover:bg-blue-600 transition-colors">
-                Back to Gallery
-              </button>
+              <h2 className="text-4xl font-serif text-slate-900 mb-8 leading-tight">{selectedImg.title}</h2>
+              <div className="h-px w-12 bg-indigo-600 mb-10"></div>
+              
+              <p className="text-slate-500 font-serif italic leading-relaxed text-lg mb-auto">
+                {selectedImg.description}
+              </p>
+              
+              <div className="mt-20 space-y-4">
+                <p className="text-[10px] font-bold text-slate-300 uppercase tracking-[0.2em]">Category: {selectedImg.category}</p>
+                <button 
+                  onClick={() => setSelectedImg(null)} 
+                  className="w-full border border-slate-900 py-5 text-[10px] font-bold uppercase tracking-[0.4em] hover:bg-slate-900 hover:text-white transition-all"
+                >
+                  Close Exhibition
+                </button>
+              </div>
             </div>
           </div>
         </div>
@@ -130,8 +155,8 @@ export default function ActivitiesPage() {
   return (
     <>
       <Navbar />
-      <main className="pt-32 pb-20 bg-white min-h-screen">
-        <Suspense fallback={<div className="text-center pt-20 font-black text-slate-400">Loading...</div>}>
+      <main className="pt-48 pb-20 bg-[#FAF9F6] min-h-screen">
+        <Suspense fallback={<div className="text-center pt-20 font-serif italic text-slate-400 text-2xl">Accessing Archives...</div>}>
           <GalleryContent />
         </Suspense>
       </main>

@@ -8,20 +8,18 @@ export default function NewsDetail() {
   const params = useParams();
   const id = params?.id;
   
-  // Safety Check: Ensure newsData exists and find the specific article
   const newsArray = Array.isArray(newsData) ? newsData : [];
   const article = id ? newsArray.find(n => n.id === id) : null;
 
-  // Error Handling: If the ID is wrong or still loading
   if (!article) {
     return (
       <>
         <Navbar />
-        <main className="min-h-screen flex items-center justify-center bg-slate-50">
+        <main className="min-h-screen flex items-center justify-center bg-[#FAF9F6]">
           <div className="text-center">
-            <h1 className="text-xl font-black text-slate-900 uppercase tracking-widest">Story Not Found</h1>
-            <Link href="/news" className="mt-6 inline-block text-blue-600 font-bold uppercase text-[10px] border-b-2 border-blue-600 pb-1">
-              Return to Gazette
+            <h1 className="text-xl font-serif italic text-slate-900">Document Not Found</h1>
+            <Link href="/news" className="mt-8 inline-block text-indigo-900 font-bold uppercase text-[10px] tracking-[0.3em] border-b border-indigo-900 pb-2">
+              Return to Gazette Index
             </Link>
           </div>
         </main>
@@ -32,82 +30,90 @@ export default function NewsDetail() {
   return (
     <>
       <Navbar />
-      <main className="min-h-screen bg-white pb-24">
+      <main className="min-h-screen bg-[#FAF9F6] pb-32">
         
-        {/* TOP NAVIGATION & TITLE AREA */}
-        <header className="pt-40 pb-16 px-6 bg-slate-50 border-b border-slate-100">
-          <div className="max-w-4xl mx-auto">
-            <Link href="/news" className="text-blue-600 font-black text-[10px] uppercase tracking-[0.3em] mb-10 inline-flex items-center gap-2 group">
-              <span className="group-hover:-translate-x-2 transition-transform">←</span> Back to Gazette
+        {/* EDITORIAL HEADER */}
+        <header className="pt-48 pb-20 px-8">
+          <div className="max-w-4xl mx-auto text-center">
+            <Link href="/news" className="text-indigo-600 font-bold text-[10px] uppercase tracking-[0.4em] mb-12 inline-block hover:text-indigo-950 transition-colors">
+              [ Back to Editorial Index ]
             </Link>
             
-            <div className="flex items-center gap-4 mb-8">
-              <span className="bg-blue-600 text-white text-[9px] font-black px-4 py-1.5 rounded-full uppercase tracking-widest shadow-lg shadow-blue-200">
-                {article.category}
+            <div className="flex items-center justify-center gap-6 mb-10">
+              <span className="text-slate-400 text-[10px] font-bold uppercase tracking-[0.3em]">
+                Registry: {article.date}
               </span>
-              <span className="text-slate-400 text-[10px] font-bold uppercase tracking-widest">
-                {article.date}
+              <span className="h-1 w-1 bg-slate-300 rounded-full"></span>
+              <span className="text-indigo-900 text-[10px] font-bold uppercase tracking-[0.3em]">
+                Category: {article.category}
               </span>
             </div>
 
-            <h1 className="text-4xl md:text-7xl font-black text-slate-900 tracking-tighter uppercase italic leading-[0.85]">
+            <h1 className="text-5xl md:text-7xl font-serif font-light text-slate-900 tracking-tight leading-[1.1] mb-12">
               {article.title}
             </h1>
+            
+            <div className="h-px w-32 bg-indigo-900 mx-auto opacity-20"></div>
           </div>
         </header>
 
         {/* MAIN ARTICLE BODY */}
-        <article className="max-w-4xl mx-auto px-6 -mt-12">
+        <article className="max-w-5xl mx-auto px-8">
           
-          {/* Featured Image */}
-          <div className="rounded-[3.5rem] overflow-hidden shadow-2xl mb-16 h-[40vh] md:h-[60vh] border-8 border-white">
-            <img 
-              src={article.image} 
-              className="w-full h-full object-cover" 
-              alt={article.title} 
-            />
+          {/* Formal Image Layout */}
+          <div className="bg-white p-3 border border-slate-200 shadow-sm mb-20">
+            <div className="relative aspect-[21/9] overflow-hidden grayscale hover:grayscale-0 transition-all duration-1000">
+              <img 
+                src={article.image} 
+                className="w-full h-full object-cover" 
+                alt={article.title} 
+              />
+            </div>
           </div>
 
           <div className="max-w-3xl mx-auto">
             {/* The Hook/Excerpt */}
-            <p className="text-2xl md:text-3xl text-slate-800 font-bold leading-tight italic mb-12 border-l-8 border-blue-600 pl-8 tracking-tight">
-              "{article.excerpt}"
+            <p className="text-2xl md:text-3xl text-slate-700 font-serif italic leading-snug mb-16 text-center border-y border-slate-100 py-10">
+              {article.excerpt}
             </p>
             
             {/* The Main Story Content */}
-            <div className="text-lg text-slate-600 leading-[1.8] space-y-8 font-medium">
-              <p className="first-letter:text-5xl first-letter:font-black first-letter:text-blue-600 first-letter:mr-3 first-letter:float-left">
+            <div className="text-lg text-slate-800 leading-[1.9] space-y-10 font-serif font-light text-justify">
+              <p className="first-letter:text-7xl first-letter:font-serif first-letter:font-light first-letter:text-indigo-900 first-letter:mr-4 first-letter:float-left first-letter:leading-none">
                 {article.content}
               </p>
               
               <p>
                 This development continues to showcase the evolving landscape of Passi City College 
-                as it transitions into a hub for "Legends" in various fields—from technology and business 
+                as it transitions into a hub for excellence in various fields—from technology and business 
                 to public safety and education.
               </p>
             </div>
 
-            {/* AUTHOR / SOURCE FOOTER */}
-            <div className="mt-24 pt-12 border-t border-slate-100 flex flex-col md:flex-row justify-between items-center gap-10">
-              <div className="flex items-center gap-5">
-                <div className="w-14 h-14 rounded-3xl bg-slate-900 flex items-center justify-center text-white font-black italic text-xl shadow-xl shadow-slate-200">
-                  P
+            {/* INSTITUTIONAL SIGNATURE */}
+            <footer className="mt-32 pt-16 border-t border-slate-200">
+              <div className="flex flex-col md:flex-row justify-between items-center gap-12">
+                <div className="flex items-center gap-6">
+                  <div className="w-16 h-16 bg-indigo-950 flex items-center justify-center text-white font-serif italic text-2xl">
+                    P
+                  </div>
+                  <div>
+                    <p className="text-[10px] font-bold text-slate-900 uppercase tracking-[0.3em]">PCC Gazette Editorial Board</p>
+                    <p className="text-[9px] text-slate-400 font-bold uppercase tracking-[0.2em] mt-1">Official Institutional Publication</p>
+                  </div>
                 </div>
-                <div>
-                  <p className="text-sm font-black text-slate-900 uppercase tracking-tight">PCC Gazette Editorial</p>
-                  <p className="text-[10px] text-slate-400 font-bold uppercase tracking-[0.2em]">Institutional Press Release</p>
+                
+                <div className="flex gap-4">
+                  <button className="border border-slate-200 text-slate-900 px-8 py-4 text-[9px] font-bold uppercase tracking-widest hover:bg-white transition-all">
+                    Copy Citation
+                  </button>
+                  <button className="bg-indigo-900 text-white px-10 py-4 text-[9px] font-bold uppercase tracking-widest hover:bg-indigo-800 transition-all shadow-xl">
+                    Dispatch Article
+                  </button>
                 </div>
               </div>
-              
-              <div className="flex gap-3">
-                <button className="bg-slate-50 text-slate-900 px-6 py-4 rounded-2xl font-black text-[10px] uppercase tracking-widest hover:bg-slate-100 transition-colors border border-slate-100">
-                  Copy Link
-                </button>
-                <button className="bg-blue-600 text-white px-8 py-4 rounded-2xl font-black text-[10px] uppercase tracking-widest hover:bg-blue-700 transition-all shadow-xl shadow-blue-100">
-                  Share Story
-                </button>
-              </div>
-            </div>
+              <p className="text-center mt-20 text-[8px] text-slate-300 font-bold uppercase tracking-[0.5em]">Passi City College Archives — Document ID: {article.id}-026</p>
+            </footer>
           </div>
         </article>
       </main>

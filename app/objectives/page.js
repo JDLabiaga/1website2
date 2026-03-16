@@ -6,86 +6,90 @@ export default function Objectives() {
     {
       title: "Holistic Development",
       text: "Equip students with adequate and relevant knowledge and skills through technology-oriented education, quality instruction, research, and community extension.",
-      icon: "🚀"
+      roman: "I"
     },
     {
       title: "Cultural Heritage",
       text: "Respect human dignity, preserve local and national ideals, and safeguard cultural heritage.",
-      icon: "🏛️"
+      roman: "II"
     },
     {
       title: "Community Service",
       text: "Promote love and service to the community and contribute to the acceleration of the country's economic growth and development.",
-      icon: "🤝"
+      roman: "III"
     },
     {
       title: "Spiritual Maturity",
       text: "Bring students closer to God and mold them to lead quality lives in a democratic, just, peaceful, environment-friendly, and God-loving society.",
-      icon: "🙏"
+      roman: "IV"
     }
   ];
 
   return (
     <>
       <Navbar />
-      <main className="pt-32 pb-20 bg-[#f8fafc] min-h-screen overflow-hidden">
-        <div className="max-w-6xl mx-auto px-6 relative">
+      <main className="pt-48 pb-32 bg-[#FAF9F6] min-h-screen">
+        <div className="max-w-6xl mx-auto px-8 relative">
           
-          {/* Decorative Background Element */}
-          <div className="absolute -top-20 -right-20 w-64 h-64 bg-blue-100 rounded-full blur-3xl opacity-50"></div>
-          
-          <div className="text-center mb-20">
-            <span className="bg-blue-600 text-white text-[10px] font-black px-4 py-1.5 rounded-full uppercase tracking-[0.3em] mb-4 inline-block">
-              Our Commitment
+          {/* FORMAL HEADER */}
+          <div className="text-center mb-32">
+            <span className="text-indigo-600 font-bold uppercase tracking-[0.5em] text-[10px] mb-6 block">
+              Strategic Framework
             </span>
-            <h1 className="text-6xl md:text-7xl font-black text-slate-900 tracking-tighter uppercase italic">
-              PCC <span className="text-blue-600">Objectives</span>
+            <h1 className="text-6xl md:text-8xl font-serif font-light text-slate-900 tracking-tight mb-8">
+              Institutional <span className="italic">Objectives</span>
             </h1>
-            <p className="text-slate-500 mt-4 font-medium max-w-xl mx-auto">
-              To accomplish our mission, Passi City College commits itself to the following strategic pillars of growth.
+            <div className="h-px w-24 bg-slate-300 mx-auto mb-8"></div>
+            <p className="text-slate-500 font-serif italic text-lg max-w-2xl mx-auto leading-relaxed">
+              Passi City College commits itself to these fundamental pillars of academic and moral excellence.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8">
+          {/* STRUCTURED CHARTER GRID */}
+          <div className="grid md:grid-cols-2 gap-x-16 gap-y-20">
             {objectives.map((obj, i) => (
               <div 
                 key={i} 
-                className="group relative bg-white p-10 rounded-[3rem] shadow-xl shadow-slate-200/50 border border-slate-100 transition-all duration-500 hover:-translate-y-3 hover:shadow-2xl hover:shadow-blue-200/40"
+                className="group relative flex gap-8 items-start"
               >
-                {/* Number Badge */}
-                <div className="absolute top-8 right-10 text-6xl font-black text-slate-50 opacity-0 group-hover:opacity-100 transition-opacity duration-500 italic">
-                  0{i + 1}
+                {/* ROMAN NUMERAL INDICATOR */}
+                <div className="flex-shrink-0">
+                  <span className="text-4xl font-serif italic text-indigo-900/20 group-hover:text-indigo-900 transition-colors duration-700">
+                    {obj.roman}
+                  </span>
                 </div>
 
-                <div className="relative z-10">
-                  <div className="w-16 h-16 bg-slate-50 rounded-2xl flex items-center justify-center text-3xl mb-8 group-hover:bg-blue-600 group-hover:text-white transition-colors duration-500 shadow-inner">
-                    {obj.icon}
-                  </div>
-                  
-                  <h3 className="text-2xl font-black text-slate-900 uppercase tracking-tighter italic mb-4">
+                <div className="pt-2">
+                  <h3 className="text-xl font-bold text-slate-900 uppercase tracking-[0.2em] mb-6 flex items-center gap-4">
                     {obj.title}
+                    <span className="h-[1px] w-8 bg-indigo-100 group-hover:w-16 transition-all duration-700"></span>
                   </h3>
                   
-                  <p className="text-slate-600 leading-relaxed font-medium">
+                  <p className="text-slate-600 font-serif font-light leading-relaxed text-lg">
                     {obj.text}
                   </p>
                 </div>
-
-                {/* Interactive Bottom Border */}
-                <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-1.5 bg-blue-600 rounded-full group-hover:w-1/3 transition-all duration-500"></div>
               </div>
             ))}
           </div>
 
-          <div className="mt-20 text-center">
-            <div className="inline-block p-[2px] rounded-full bg-gradient-to-r from-blue-600 to-cyan-400">
-                <button className="bg-white hover:bg-transparent hover:text-white transition-all text-slate-900 font-black uppercase text-[10px] tracking-widest px-12 py-5 rounded-full">
-                    Download Student Handbook
-                </button>
-            </div>
+          {/* FORMAL ACTION AREA */}
+          <div className="mt-40 pt-20 border-t border-slate-200 text-center">
+            <p className="text-[10px] text-slate-400 font-bold uppercase tracking-[0.4em] mb-12">
+              Official Registry of Standards
+            </p>
+            <button className="px-16 py-5 border border-indigo-950 text-indigo-950 text-[10px] font-bold uppercase tracking-[0.4em] hover:bg-indigo-950 hover:text-white transition-all duration-500">
+              Access Institutional Handbook
+            </button>
           </div>
         </div>
       </main>
+
+      <style jsx global>{`
+        body {
+          background-color: #FAF9F6;
+        }
+      `}</style>
     </>
   );
 }

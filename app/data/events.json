@@ -1,66 +1,66 @@
 [
   {
     "id": 1,
-    "title": "Founding Anniversary",
+    "title": "Institutional Founding Anniversary",
     "date": "March 2024",
-    "category": "Celebration",
+    "category": "Tradition",
     "images": ["/images/act1.jpg", "/images/act1.1.jpg", "/images/act1.2.jpg", "/images/act1.3.jpg"],
-    "description": "Celebrating years of PCC history with grand parades and cultural presentations."
+    "description": "Commemorating the historical inception of the college through civic parades and cultural exhibitions."
   },
   {
     "id": 2,
-    "title": "College Week",
+    "title": "Inter-Collegiate Athletic Meet",
     "date": "February 2024",
-    "category": "Sports",
+    "category": "Athletics",
     "images": ["/images/act2.jpg","/images/act2.1.jpg","/images/act2.2.jpg","/images/act2.3.jpg","/images/act2.4.jpg","/images/act2.5.jpg"],
-    "description": "The ultimate sports competition where departments battle for the championship."
+    "description": "The premier seasonal tournament where academic units engage in disciplined athletic competition for the institutional cup."
   },
   {
     "id": 3,
-    "title": "Acquaintance Party",
+    "title": "Academic Integration & Assembly",
     "date": "September 2024",
-    "category": "Celebration",
+    "category": "Social",
     "images": ["/images/act3.jpg"],
-    "description": "A night of music and bonding to welcome new students into the PCC family."
+    "description": "A formal welcome and socialization event designed to integrate incoming students into the collegiate community."
   },
   {
     "id": 4,
-    "title": "Teacher's Day",
+    "title": "Faculty & Mentorship Recognition",
     "date": "October 5, 2024",
-    "category": "Celebration",
+    "category": "Recognition",
     "images": ["/images/act4.jpg"],
-    "description": "Honoring our mentors for their dedication to student success and character building."
+    "description": "A day of honoring the pedagogical expertise and commitment of our faculty members to academic excellence."
   },
   {
     "id": 5,
-    "title": "Christmas Party",
+    "title": "Annual Yuletide Convocation",
     "date": "December 2024",
-    "category": "Celebration",
+    "category": "Tradition",
     "images": ["/images/act5.jpg"],
-    "description": "Gathering as a community to share gifts and holiday joy across all departments."
+    "description": "A unified gathering of all academic departments to celebrate community harmony and the seasonal festivities."
   },
   {
     "id": 6,
-    "title": "Do Day",
+    "title": "Civic Stewardship & Campus Maintenance",
     "date": "Quarterly",
-    "category": "Community",
+    "category": "Extension",
     "images": ["/images/act6.jpg"],
-    "description": "A dedicated campus clean-up and beautification day for social responsibility."
+    "description": "A recurring initiative focused on environmental sustainability and the physical upkeep of the campus grounds."
   },
   {
     "id": 7,
-    "title": "General Orientation",
+    "title": "General Academic Orientation",
     "date": "August 2025",
     "category": "Academic",
     "images": ["/images/act7.jpg"],
-    "description": "Welcoming new students with an overview of college life and academic standards."
+    "description": "A comprehensive introductory session detailing the institutional policies and collegiate standards for the academic year."
   },
   {
     "id": 8,
-    "title": "School Elections",
+    "title": "Student Council Electoral Proceedings",
     "date": "August 2024",
-    "category": "Community",
+    "category": "Governance",
     "images": ["/images/act8.jpg"],
-    "description": "Selecting the next generation of student leaders for the Supreme Student Council."
+    "description": "The official democratic process for selecting student representatives to lead the Supreme Student Government."
   }
 ]

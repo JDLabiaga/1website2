@@ -5,75 +5,98 @@ export default function VisionMissionPage() {
   return (
     <>
       <Navbar />
-      <main className="pt-40 pb-20 bg-[#fbfcfd] min-h-screen overflow-hidden relative">
+      <main className="pt-48 pb-32 bg-[#FAF9F6] min-h-screen relative overflow-hidden">
         
-        {/* Background Decorative Blobs */}
-        <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0 pointer-events-none">
-          <div className="absolute top-[-10%] right-[-5%] w-[500px] h-[500px] bg-blue-50 rounded-full blur-[120px] opacity-60"></div>
-          <div className="absolute bottom-[-10%] left-[-5%] w-[400px] h-[400px] bg-indigo-50 rounded-full blur-[100px] opacity-60"></div>
+        {/* Subtle Watermark Decorative Element */}
+        <div className="absolute inset-0 flex items-center justify-center opacity-[0.03] pointer-events-none select-none">
+          <h2 className="text-[30vw] font-serif italic">PCC</h2>
         </div>
 
-        <div className="max-w-6xl mx-auto px-6 relative z-10">
-          <div className="text-center mb-20">
-            <h1 className="text-6xl md:text-8xl font-black text-slate-900 tracking-tighter uppercase italic leading-none">
-              The <span className="text-blue-600">Blueprint</span>
+        <div className="max-w-6xl mx-auto px-8 relative z-10">
+          
+          {/* HEADER SECTION */}
+          <div className="text-center mb-32">
+            <span className="text-indigo-600 font-bold uppercase tracking-[0.5em] text-[10px] mb-6 block">
+              Foundational Principles
+            </span>
+            <h1 className="text-6xl md:text-8xl font-serif font-light text-slate-900 tracking-tight leading-none">
+              Vision <span className="italic font-serif">&</span> Mission
             </h1>
-            <p className="text-slate-400 font-bold uppercase tracking-[0.5em] mt-4 text-xs">
-              Vision • Mission • Core Values
-            </p>
+            <div className="h-px w-24 bg-slate-300 mx-auto mt-12 mb-6"></div>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-8 items-stretch">
+          <div className="grid lg:grid-cols-2 gap-12 items-stretch">
             
-            {/* VISION CARD */}
-            <div className="group relative bg-white p-12 md:p-16 rounded-[4rem] shadow-2xl shadow-slate-200/50 border border-slate-100 transition-all duration-700 hover:-translate-y-4">
-              <div className="absolute top-10 left-10 text-blue-600/10 text-9xl font-black italic select-none">V</div>
+            {/* VISION SECTION */}
+            <div className="relative bg-white border border-slate-200 p-12 md:p-20 shadow-sm transition-all duration-700 hover:shadow-xl group">
               <div className="relative z-10">
-                <span className="bg-blue-50 text-blue-600 font-black text-[10px] px-5 py-2 rounded-full uppercase tracking-widest mb-8 inline-block">
-                  Future Horizon
-                </span>
-                <h2 className="text-4xl font-black text-slate-900 uppercase tracking-tighter mb-8 italic">Vision</h2>
-                <p className="text-2xl md:text-3xl text-slate-700 font-bold leading-tight tracking-tight italic">
+                <p className="text-indigo-950 font-bold text-[10px] uppercase tracking-[0.4em] mb-12 flex items-center gap-4">
+                  <span className="h-px w-8 bg-indigo-900"></span>
+                  The Vision
+                </p>
+                <h2 className="text-3xl font-serif italic text-slate-500 mb-10">
+                  Institutional Aspiration
+                </h2>
+                <p className="text-3xl md:text-4xl font-serif text-slate-900 leading-tight tracking-tight">
                   "A leading institution in academic excellence and character formation."
                 </p>
               </div>
-              {/* Bottom Accent */}
-              <div className="absolute bottom-12 right-12 w-12 h-12 border-r-4 border-b-4 border-blue-600/20 group-hover:border-blue-600 transition-colors duration-500"></div>
+              {/* Corner Ornament */}
+              <div className="absolute top-0 right-0 w-16 h-16 border-t border-r border-slate-100 group-hover:border-indigo-200 transition-colors"></div>
             </div>
 
-            {/* MISSION CARD */}
-            <div className="group relative bg-slate-900 p-12 md:p-16 rounded-[4rem] shadow-2xl shadow-blue-900/20 transition-all duration-700 hover:-translate-y-4 flex flex-col justify-center">
-              <div className="absolute top-10 left-10 text-white/5 text-9xl font-black italic select-none">M</div>
+            {/* MISSION SECTION */}
+            <div className="relative bg-indigo-950 p-12 md:p-20 shadow-2xl transition-all duration-700 hover:-translate-y-2">
               <div className="relative z-10">
-                <span className="bg-blue-600 text-white text-[10px] font-black px-5 py-2 rounded-full uppercase tracking-widest mb-8 inline-block">
+                <p className="text-indigo-300 font-bold text-[10px] uppercase tracking-[0.4em] mb-12 flex items-center gap-4">
+                  <span className="h-px w-8 bg-indigo-400"></span>
+                  The Mission
+                </p>
+                <h2 className="text-3xl font-serif italic text-indigo-200/50 mb-10">
                   Current Mandate
-                </span>
-                <h2 className="text-4xl font-black text-white uppercase tracking-tighter mb-8 italic">Mission</h2>
-                <p className="text-xl md:text-2xl text-blue-100 font-medium leading-relaxed tracking-wide">
+                </h2>
+                <p className="text-2xl md:text-3xl font-serif text-white leading-relaxed font-light">
                   "To provide quality education that is accessible to all, fostering innovation and service."
                 </p>
               </div>
-              <div className="mt-12 h-[2px] w-1/4 bg-blue-600 group-hover:w-full transition-all duration-1000"></div>
+              {/* Linear Progress Decorative */}
+              <div className="absolute bottom-0 left-0 h-1 w-0 bg-indigo-500 transition-all duration-1000 group-hover:w-full"></div>
             </div>
 
           </div>
 
-          {/* Core Values / Summary Footer */}
-          <div className="mt-20 bg-white/50 backdrop-blur-md border border-white p-8 rounded-[3rem] flex flex-col md:flex-row justify-between items-center gap-6">
-            <div className="flex gap-4">
+          {/* CORE VALUES - INSTITUTIONAL FOOTER */}
+          <div className="mt-32 border-t border-slate-200 pt-16">
+            <div className="flex flex-col md:flex-row justify-between items-center gap-12">
+              <div className="flex flex-wrap justify-center gap-10">
                 {['Innovation', 'Service', 'Excellence', 'Character'].map((val) => (
-                    <span key={val} className="text-[10px] font-black uppercase tracking-widest text-slate-400 border-r border-slate-200 pr-4 last:border-0">
-                        {val}
-                    </span>
+                  <div key={val} className="text-center group">
+                    <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-slate-400 group-hover:text-indigo-900 transition-colors cursor-default">
+                      {val}
+                    </p>
+                  </div>
                 ))}
+              </div>
+              
+              <div className="text-right">
+                <p className="text-[9px] font-bold text-indigo-900 uppercase tracking-[0.4em] italic border-b border-indigo-900/10 pb-2">
+                  Passi City College Archives
+                </p>
+                <p className="text-[8px] text-slate-400 uppercase tracking-widest mt-2">
+                  Established Anno Domini MMIII
+                </p>
+              </div>
             </div>
-            <p className="text-[10px] font-black text-blue-600 uppercase tracking-widest">
-                Passi City College • Est. 2003
-            </p>
           </div>
 
         </div>
       </main>
+
+      <style jsx global>{`
+        body {
+          background-color: #FAF9F6;
+        }
+      `}</style>
     </>
   );
 }
